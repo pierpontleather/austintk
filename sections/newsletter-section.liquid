@@ -1,0 +1,27 @@
+<div class="wrapper">
+      <div class="newsletter-signup">
+          <div class="footer_block footer__newsletter">
+                <h6 class="site-footer__section-title">{{ 'general.newsletter_form.newsletter_heading' | t }}</h6>
+              {% include 'newsletter' %}
+      </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured product",
+    "settings": [
+      {
+        "type": "newsletter",
+        "name": "Newsletter signup",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,74 @@
+{% unless template == 'cart' %}
+<div class="Slideout__cart-container clearfix" data-cart-view="data-cart-view">
+
+
+    <div class="Slideout__cart-header slideout">
+        <div class="cart-total-wrapper slideout">
+            <p class="your-bag slideout slideout subtitle1">Your Bag</p>
+        </div>
+    </div>
+
+
+    <div class="Slideout__cart-products">
+    <p class="no-products-in-cart-message"></p>
+           <div class="cart__row cart__grid__section cart__product slideout" rv-each-item="cart.items">
+          <!--  IMAGE -->
+          <div class="cart__product-image slideout" data-label="{{ 'customer.order.product' | t }}">
+            <a rv-href="item.url" class="cart__image-link slideout">
+              <img rv-src="item.image | productImageSize '300x'" width="100"> 
+            </a>
+          </div>
+          <!--  TITLE div -->            
+          <div class="cart__item-title slideout">
+          <!--  title -->
+            <a class="cart__product-title subtitle1 slideout" rv-href="item.url">
+            <span rv-text="item.title" class="cart__product-title-text subtitle1 slideout"></span>
+            </a>
+          <!--  variant title -->            
+              <br>
+              <small class="cart__variant-title slideout" rv-text="item.variant_title"></small>
+          <!--  vendor -->         
+            {% if settings.cart_vendor_enable %}
+              <p class="cart__vendor-name slideout" rv-text="item.vendor"></p>
+            {% endif %}
+            <!-- line-item-properties -->            
+              <div class="cart__line-item-properties slideout">
+                <ul rv-hide="item.propertyArray | empty">
+                    <li rv-each-property="item.propertyArray < properties">
+                        <small class="text-muted slideout">{property.name}: {property.value}</small>
+                    </li>
+                </ul>
+              </div>
+          </div>
+          <!-- QNTTY -->              
+          <div class="cart-label-quantity slideout">
+            <div class="cart-label-quantity-2 slideout">
+            <a class="minus-quantity slideout" href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | minus 1">{% include 'icon-minus' %}</a>
+              <span class="cart-quantity-number body2 slideout" rv-text="item.quantity"></span>
+            <a class="plus-quantity slideout" href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | plus 1">{% include 'icon-plus' %}</a>
+            </div>
+          </div>
+          <!-- TOTAL -->             
+          <div class="cart-label-total slideout">
+            <span class="cart-label-total-text number-text slideout" rv-html="item.line_price | money Currency.currentCurrency" class="subtitle1"></span>
+          </div>
+          <!--  REMOVE --> 
+            <div class="cart__remove-wrap slideout" 
+              <a href="#" rv-data-cart-remove="index | plus 1">
+                {% include 'icon-close-ios' %}
+              </a>
+          </div>   
+        </div>
+    </div>
+
+
+    <div class="Slideout__cart-footer">
+        <p class="shipping_returns_cta slideout">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+        <a href="/cart">
+            <button type="link" class="button button-checkout slideout">Go To Cart</button>
+        </a>
+    </div>
+
+
+</div>
+{% endunless %}

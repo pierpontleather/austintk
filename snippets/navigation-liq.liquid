@@ -1,0 +1,108 @@
+
+    {% assign menu = linklists.main-menu %}
+    {% for link in menu.links %}
+    {% capture my_variable %}{% cycle 'group1': '1', '2', '3', '4' %}{% end capture %}
+    {% capture my_altvariable %}{% cycle 'group2': '', '2', '3', '4' %}{% end capture %}
+    <li class= "list-item li{{ my_variable }}"><a href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links != blank %}
+        {% for sub_link in link.links %}
+        <div class= "megamenu{{ my_altvariable }}">
+            <ul class= "megalist{{ my_altvariable }}">
+                <div class = menu2>
+                    <li class="title sublistitem">{{ sub_link.title }}</li>
+                    {% if sub_link.links != blank %}
+                    {% for sub_sub_link in sub_link.links %}
+                    <li class={% cycle 'group5': '"sublistitem lia1"', '"sublistitem lia2"', '"sublistitem lia3"', '"sublistitem lia4"', '"sublistitem lia5"' %}><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>                            
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </ul>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </li>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="nav">
+	<div class="container">
+		<ul class="list">
+			<li class="Logo"><img src="{{ 'PIERPONTLEATHERLOGOA.svg' | asset_url }}" alt="logo"></li>
+			<li class="list-item li1"><a href="#">Shop ⌵</a>
+				<div class="megamenu{% cycle 'group1': 'megamenu', 'megamenu2', 'megamenu3', 'megamenu4' %}">
+					<ul class="{% cycle 'group2': 'megalist', 'megalist2', 'megalist3', 'megalist4' %}">
+						<div class = menu2>
+							<li class="title sublistitem">Small Goods</li>
+							<li class="sublistitem lia2"><a href="https://www.pierpontleather.com/collections/shop">Wallets</a></li>
+							<li class="sublistitem lia3"><a href="https://www.pierpontleather.com/collections/bags">Bags</a></li>
+							<li class="sublistitem lia4"><a href="https://www.pierpontleather.com/collections/watch-straps">Straps</a></li>
+						</div>
+					</ul>
+					<ul class="megalist{% cycle 'group3': 'megalist', 'megalist2', 'megalist3', 'megalist4' %}">
+						<div class = menu2>
+							<li class="title sublistitem">Bespoke</li>
+							<li class="sublistitem lia2"><a href="https://www.pierpontleather.com/collections/made-to-order-wallets">Wallets</a></li>
+							<li class="sublistitem lia3"><a href="https://www.pierpontleather.com/collections/mens-bags">Bags</a></li>
+						</div>	
+					</ul>
+				</div>
+			</li>
+			<li class="list-item li2"><a href="#">Our Story ⌵</a>
+        		<div class="megamenu2">
+					<ul class="megalist2">
+						<div class = menu2>
+							<li class="title sublistitem">About</li>
+							<li class="sublistitem lia2"><a href="https://www.pierpontleather.com/pages/about-us">Story</a></li>
+							<li class="sublistitem lia3"><a href="#">Philosophy</a></li>
+							<li class="sublistitem lia4"><a href="#">Craftsmanship</a></li>
+						</div>
+					</ul>
+					<ul class="megalist2">
+						<div class = menu2>
+							<li class="title sublistitem">Team</li>
+							<li class="sublistitem lia2"><a href="#">Founders</a></li>
+							<li class="sublistitem lia3"><a href="https://www.pierpontleather.com/pages/contact-us">Contact</a></li>
+            <li class="sublistitem lia3"><a href="#">Press</a></li>
+        	<li class="sublistitem lia3"><a href="#">Careers</a></li>
+						</div>	
+					</ul>
+				</div>
+      </li>
+			<li class="list-item li3"><a href="#">Contact</a></li>
+			<li class="list-item li4"><a href="#">Featured</a></li>
+      <div class="cart-navigation">
+          <a class="icon" href="/cart">
+          <img src="{{ 'bag.svg' | asset_url }}" alt="logo">
+          {% if cart.item_count == 0 %}
+          {% else %}
+          <span class="item-count">{{ cart.item_count }}</span>
+          {% endif %}
+        </a>
+      </div>
+      <div class="nav-search" onmouseover="searchAnimateOpen()" onmouseout="searchAnimateClose()">
+        <form autocomplete="off" class="nav-search-form">
+           <div class="nav-search-inner">
+             <input class="searchinput" type="search" name="search"/>
+             <div class="close-search-button">
+                 <i class="close-search-icon">{% include 'icon-close-small' %}</i>
+             </div>
+          </div>
+       </form>
+       <div class="nav-search-button">
+           <i class="nav-search-icon">{% include 'icon-search' %}</i>
+       </div>
+      </div>
+		</ul>
+	</div>
+</div>

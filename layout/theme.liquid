@@ -1,0 +1,147 @@
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="{{ shop.locale }}"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+ <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700" rel="stylesheet">
+
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  {% capture seo_title %}
+    {{ page_title }}
+    {% if current_tags %}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {% endif %}
+    {% if current_page != 1 %}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {% endif %}
+    {% unless page_title contains shop.name %}
+      &ndash; {{ shop.name }}
+    {% endunless %}
+  {% endcapture %}
+  <title>{{ seo_title }}</title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% include 'social-meta-tags' %}
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    };
+  </script>
+
+{{ content_for_header }}
+
+<!-- {{ 'http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js' | script_tag }} -->
+ {{ '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js' | script_tag }}  
+   <!-- Include Cart.js -->
+  {{ 'rivets-cart.min.js' | asset_url | script_tag }}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'panzoom.js' | asset_url | script_tag }}
+
+  {% if template.directory == 'customers' %}
+    <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
+  {% endif %}
+
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lt IE 9]><script src="{{ 'vendor.js' | asset_url }}"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lt IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
+
+  
+  
+ 
+</head>
+
+<body onload="constructCart()" id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
+
+
+<a class="in-page-link skip-link skip-to-content visually-hidden" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    <div class="header-wrapper ">
+      {% include 'topnav' %}
+      {% section 'header' %}
+      </div>
+      <div id="overlay" class="overlay"> 
+    
+       <div id="overlayimage" class="productimage__container">
+          <img class="productimage__main-image" src="{{ featured_image | img_url: '1080x1080' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+        </div>
+     
+      </div> 
+      
+      <div id="PageContainer" class="">
+
+      <main role="main" id="MainContent">
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'footer' %}
+     
+      </div>
+
+
+
+
+
+
+{{ 'fastclick.min.js' | asset_url | script_tag }}
+
+
+  <!-- Initialise Cart.js once the page has loaded -->
+  <script type="text/javascript">
+      $(function() {
+        CartJS.init({{ cart | json }}, {
+            "moneyFormat": "{{ shop.money_format }}",
+            "moneyWithCurrencyFormat": "{{ shop.money_with_currency_format }}"
+        });
+    });
+
+/* Initialise PanZoom.js once the page has loaded //
+    //  $(".productimage__container").panzoom();
+
+      // Pass options
+      $(".productimage__container img").panzoom({
+        minScale: 1,
+        maxScale: 2,
+        increment: 1,
+        contain: 'automatic',
+        $zoomIn: $("#zoom-in"),
+        $zoomOut: $("#zoom-out"),
+        $reset: $("#reset")
+      });   
+
+       $(".productimage__container img").on("panzoomzoom", function( e, panzoom ) {
+          $('#reset').show(); 
+          }); 
+       $(".productimage__container img").on("panzoomreset", function( e, panzoom ) {
+          $('#reset').hide(); 
+          });  
+
+    $('#reset').hide(); */
+  </script>
+{{ 'babel-compiled.js' | asset_url | script_tag }}
+</body>
+</html>

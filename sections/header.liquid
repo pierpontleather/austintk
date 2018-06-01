@@ -1,0 +1,21 @@
+
+<div  class="data-section-top" data-section-id="{{ section.id }}" data-section-type="header-section">
+  <header role="banner">
+
+    <!-- ===== TOP NAV BEGIN == -->
+    {% include 'navigation' %}
+    {% if template.name == 'index' %}
+    
+    <h1 class="h1top" itemscope itemtype="http://schema.org/Organization">
+      {% else %}
+    <div id="main_menu__wrapper" class="wrapper main-menu" itemscope itemtype="http://schema.org/Organization">
+    {% endif %}
+    {% if template.name == 'index' %}
+    </h1>
+     {% else %}
+     </div>
+    {% endif %}
+    
+
+</header>
+</div>

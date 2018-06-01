@@ -1,0 +1,338 @@
+// NEWSLETTER CSS FOR MOBILE AND DESKTOP
+
+div#shopify-section-footer {
+    background: #fafafa;
+}
+
+.footer__newsletter {
+    color: #424242;
+    text-align: left;
+}
+
+.divider {
+    height: 1px;
+    background: #bdbdbd;
+    
+}
+.site-footer {
+    padding: 0 8rem;
+    margin: auto;
+    max-width: 128rem;
+}
+
+.site-footer__newsletter-label.footer-sublistitem {
+    font-size: 1.4rem;
+}
+
+.input-group__main {
+    max-width: 85%;
+    margin: 1.4rem 0;
+    height: 4.2rem;
+    position: relative;
+}
+
+label.site-footer__newsletter-label.footer-sublistitem {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.input-group__btn {
+    position: absolute;
+    top: .9rem;
+    right: 2.1rem;
+    height: 3.2rem;
+    width: 3.2rem;
+
+    .icon-send {
+        width: 80%;
+        height: auto;
+        transition: all .2s;
+    }
+}
+
+#Subscribe {
+
+background: #fff;
+border: none;
+outline: none;
+text-align: center;
+width: 100%;
+ 
+    .icon-send {
+        fill: #616161;  
+        transition: all .4s ease-in-out;
+    }
+}
+
+#Subscribe:hover {
+    .icon-send {
+        fill: $colorPrimary;
+        transform: scale(1.1);
+    }
+}
+
+#Subscribe:active {
+    .icon-send {
+        fill: $surfaceColor900;
+        transform: scale(.95);
+    }
+}
+
+.site-footer__newsletter-label.subtitle1 {
+    margin-bottom: 4.8rem;
+    display: block;
+    font-weight: 500;
+    letter-spacing: .05em;
+}
+
+#NewsletterEmail {
+    width: 100%;
+    height: 100%;
+    line-height: 4.2rem;
+    font-size: 1.4rem;
+    font-family: Alegreya Sans;
+    font-weight: 500;
+    color: $textSecondary;
+    letter-spacing: .03em;
+    padding-left: 1rem;
+}
+
+// CSS FOR FOOTER MENU
+
+.footer__menu,{
+    color: #424242;
+    background-color: #fafafa;
+    padding: 4rem 0% 7.6rem 0%;
+
+    a {
+        color: #424242;
+        font-size: 1.4rem;
+    }
+
+.footer-lia_all {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    letter-spacing: .1em;
+    position: relative;
+}
+
+    .footer-sublistitem {
+    font-size: 1.5rem;
+    letter-spacing: .025em;
+    font-weight: 400;
+    line-height: 2.2;
+    font-family: alegreya;
+    }
+}
+
+.site-footer__menu {
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+@include media-query($medium-up) {
+    .footer-list-item {
+    width: 25%;
+    }
+
+    .footer-lia-1::before {
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/1323/5229/t/24/assets/pl-circle-crest.svg?16168211184577926817);
+    width: 31px;
+    height: 31px;
+    position: absolute;
+    left: -5rem;
+    top: -.5rem;
+    display: block;
+    background-size: cover;
+    }
+    
+}
+
+@include media-query($small) {
+    .footer-list-item {
+    width: 50%;
+    padding-bottom: 4.8rem;
+    }
+}
+
+.errors {
+    max-width: 42rem;
+    padding: 0 3.2rem;
+    margin: 1rem auto;
+    height: 2rem;
+    position: relative;
+    display: flex;
+
+    li {
+        color: #ff8c8c;
+        font-size: 1.6rem;
+      }
+}
+
+.shopify-challenge__container {
+    max-width: 500px;
+    margin: 50px auto !important;
+
+    .shopify-challenge__message {
+        font-size: 1.6rem !important;
+    }
+}
+
+.shopify-challenge__button.btn {
+    padding: 1rem 2rem !important;
+    color: #fff !important;
+    background: #fafafa !important;
+    font-size: 1.5rem !important;
+    letter-spacing: .1em !important;
+    font-family: Cabin !important;
+    text-transform: uppercase !important;
+}
+@include media-query($medium-up) {
+    .sub-footer {
+        display: flex;
+        justify-content: space-between;
+        background: #fafafa;
+        padding: 0 0%;
+    }
+
+    .PierpontLeatherCopyright {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        text-align: center;
+        padding: 1rem 0;
+
+
+        a {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        font-family: Alegreya;
+        font-weight: 400;
+        }
+    }
+
+    .sub-footer-contact-us {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        text-align: center;
+        padding: 1rem 0;
+
+        a {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        font-weight: 400;
+        }
+    }
+}
+
+
+@include media-query($small) {
+    .sub-footer {
+        display: flex;
+        justify-content: center;
+        background: $surfaceColor50;
+        flex-wrap: wrap;
+    }
+
+    .PierpontLeatherCopyright {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        text-align: center;
+        padding: 1rem 0 0 1rem;
+
+
+        a {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        font-family: Alegreya;
+        font-weight: 400;
+        }
+    }
+
+    .sub-footer-contact-us {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        text-align: center;
+       padding: 1rem 0;
+
+        a {
+        color: $textDisabled;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        font-weight: 400;
+        }
+    }
+}
+.footer__container hr {
+    color: #fafafa;
+    background: #fafafa;
+}
+
+.column-li {
+    text-align: left;
+}
+
+.divider {
+    height: 1px;
+    background: #bdbdbd;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .site-footer__menu  {
+    
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    }
+
+    .footer-list-item {
+        width: 100%;
+    }
+
+    .column-li {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .footer__newsletter {
+        color: #424242;
+        text-align: center;
+        margin-left: 0%;
+    }
+
+    .input-group__main {
+         max-width: 100%; 
+    }
+
+    .footer-lia-1::before {
+        content: "";
+        background: url(https://cdn.shopify.com/s/files/1/1323/5229/t/24/assets/pl-circle-crest.svg?16168211184577926817);
+        width: 31px;
+        height: 31px;
+        position: relative;
+        left: 41%;
+        top: -1rem;
+        display: block;
+        background-size: cover;
+    }
+
+}
+
+.footer-megalist>.menu2-footer:last-child {
+    margin-top: 1.5rem;
+}

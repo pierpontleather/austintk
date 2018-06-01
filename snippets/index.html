@@ -1,0 +1,64 @@
+
+
+  <!-- OLD NAVIGATION -->
+
+  <ul class="main-menu">
+    <li id="logo">
+      <div class="navigation__logo-box">
+        <a class="navigation__logo-box-a"href="#"/>
+         <img class"navigation__logo-image" src="{{ 'pierpontlogo.svg' | asset_url }}" alt="logo"></img>
+        </a>
+      </div>
+    </li>
+  </ul>
+  <nav role="navigation">
+    <ul class="main-menu__linklist">
+      {% for link in linklists.main-menu.links %}
+        {% if link.links != blank %}
+          <li class="main-menu__link">
+            <a class="main-menu__link-a-d" href="{{ link.url }}">{{ link.title | escape }}{% include 'icon-arrow-down' %}</a>
+            <ul class="main-menu__linklist2">
+              {% for childlink in link.links %}
+                {% if childlink.links != blank %}
+                  <li class="main-menu__link2">
+                    <a class="main-menu__link-2-a-d" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                    <ul class="main-menu__linklist3">
+                      {% for grandchildlink in childlink.links %}
+                        <li class="main-menu__link3">
+                          <a class="main-menu__link-3-a-d" href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  <li class="main-menu__link2">
+                    <a class="main-menu__link-2-a" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li class="main-menu__link">
+            <a class="main-menu__link-a" href="{{ link.url }}">{{ link.title | escape }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <ul class="menu-right">
+      <li class="menu-right__search">
+        {% include 'search' %}
+      </li>
+      <li class="menu-right__cart">
+        <a class="icon" href="/cart">
+           <img class"cart-bag-icon" src="{{ 'bag.svg' | asset_url }}" alt="cart-icon"></img>
+          <span class="item-count">{{ cart.item_count }}</span>
+        </a>
+      </li>
+    </ul>
+
+
+
+
+  </nav>

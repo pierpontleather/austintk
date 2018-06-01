@@ -1,0 +1,143 @@
+<!-- /templates/cart.liquid -->
+{% comment %}
+
+  For info on test orders:
+    - General http://docs.shopify.com/manual/your-store/orders/test-orders
+    - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
+
+{% endcomment %}
+<div class="cart-wrapper">
+{% if cart.item_count > 0 %}
+  <form action="/cart" method="post" novalidate class="cart cart__grid-wrap" data-cart-view="data-cart-view">
+    <div class="cart-cart__grid full cart__grid--responsive">
+      <div class="cart__row cart__header-labels subtitle3">
+        <div colspan="2" class="cart-item-label subtitle3">{{ 'cart.label.product' | t }}</div>
+        <div class="cart-quantity-label subtitle3">{{ 'cart.label.quantity' | t }}</div>
+        <div class="cart-unit-total-label subtitle3">{{ 'cart.label.total' | t }}</div>
+      </div>
+      <div class="for-loop-container">
+<!-- ====================== 'FOR LOOP'  ====================== -->     
+        <div class="cart__row cart__grid__section cart__product" rv-each-item="cart.items">
+          <!--  IMAGE -->
+          <div class="cart__product-image" data-label="{{ 'customer.order.product' | t }}">
+            <a rv-href="item.url" class="cart__image-link">
+              <img rv-src="item.image | productImageSize '300x'" width="100"> 
+            </a>
+          </div>
+          <!--  TITLE div -->            
+          <div class="cart__item-title">
+          <!--  title -->
+            <a class="cart__product-title subtitle1" rv-href="item.url">
+            <span rv-text="item.title" class="cart__product-title-text subtitle1"></span>
+            </a>
+          <!--  variant title -->            
+              <br>
+              <small class="cart__variant-title" rv-text="item.variant_title"></small>
+          <!--  vendor -->         
+            {% if settings.cart_vendor_enable %}
+              <p class="cart__vendor-name" rv-text="item.vendor"></p>
+            {% endif %}
+            <!-- line-item-properties -->            
+              <div class="cart__line-item-properties">
+                <ul rv-hide="item.propertyArray | empty">
+                    <li rv-each-property="item.propertyArray < properties">
+                        <small class="text-muted">{property.name}: {property.value}</small>
+                    </li>
+                </ul>
+              </div>
+          </div>
+          <!-- QNTTY -->              
+          <div class="cart-label-quantity">
+            <div class="cart-label-quantity-2">
+            <a class="minus-quantity" href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | minus 1">{% include 'icon-minus' %}</a>
+              <span class="cart-quantity-number body2" rv-text="item.quantity"></span>
+            <a class="plus-quantity" href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | plus 1">{% include 'icon-plus' %}</a>
+            </div>
+          </div>
+          <!-- TOTAL -->             
+          <div class="cart-label-total">
+            <span class="cart-label-total-text number-text" rv-html="item.line_price | money Currency.currentCurrency" class="subtitle1"></span>
+          </div>
+          <!--  REMOVE --> 
+            <div class="cart__remove-wrap" 
+              <a href="#" rv-data-cart-remove="index | plus 1">
+                {% include 'icon-close-ios' %}
+              </a>
+          </div>   
+        </div>
+<!-- ====================== 'FOR LOOP'  ====================== -->     
+      </div>
+    </div>
+    <div class="cart__row-totals">
+      {% if settings.cart_notes_enable %}
+        <div class="js-messages">
+          <div class="gift-instructions-wrapper cart-instructions-wrapper">
+            <label for="GiftSpecialInstructions">Gift Message</label><button type="button" onclick="makeActive('.gift-instructions','.gift-text-button')" class="CartSpecialInstructions gift-text-button text-button">add</button>
+            <textarea id="GiftSpecialInstructions"  placeholder="Write a note..." class="input-full text-area-cart gift-instructions"></textarea>
+          </div>
+          <div class="special-instructions-wrapper cart-instructions-wrapper">
+            <label for="CartSpecialInstructions">Special Instructions</label><button type="button" onclick="makeActive('.special-instructions','.special-text-button')" class="CartSpecialInstructions special-text-button text-button">add</button>
+            <textarea id="CartSpecialInstructions"  placeholder="Special Instructions" class="input-full text-area-cart special-instructions"></textarea>
+          </div>
+      </div>
+      {% endif %}
+      <div class=" cart-total-wrapper{% if settings.cart_notes_enable %} {% endif %}">
+        <p class="total-wrap">
+          <span class="cart__subtotal-title">Total</span>
+          <span class="h5 cart__subtotal number-text" rv-html="cart.total_price | money Currency.currentCurrency"></span>
+        </p>
+        <p class=shipping_returns_cta>{{ 'cart.general.shipping_at_checkout' | t }}</p>
+        <button type="submit" name="checkout" class="button button-checkout">{{ 'cart.general.checkout' | t }}</button>
+      </div>
+    </div>
+ <!-- ====================== 'table expample'  ======================   
+    <table data-cart-view="data-cart-view">
+
+    <tbody>
+        <tr rv-each-item="cart.items">
+            <td>
+                <strong rv-text="item.title"></strong>
+                  <img rv-src="item.image | productImageSize 'small'" width="400">    
+                <ul rv-hide="item.propertyArray | empty">
+                    <li rv-each-property="item.propertyArray < properties">
+                        <small class="text-muted">{property.name}: {property.value}</small>
+                    </li>
+                </ul>
+            </td>
+            <td rv-html="item.price | money Currency.currentCurrency"></td>
+            <td>
+                <a href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | minus 1">-</a>
+                <span rv-text="item.quantity"></span>
+                <a href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | plus 1">+</a>
+            </td>
+            <td>
+                <a href="#" rv-data-cart-remove="index | plus 1"></a>
+            </td>
+            <td rv-html="item.line_price | money Currency.currentCurrency"></td>
+        </tr>
+        <tr rv-show="cart.item_count | lt 1">
+            <td colspan="5">You don't have any items in your cart.</td>
+        </tr>
+    </tbody>
+    <tfoot rv-show="cart.item_count | gt 0">
+        <tr>
+            <td colspan="4" rv-html="cart.total_weight | weight_with_unit"></td>
+            <td rv-html="cart.total_price | money Currency.currentCurrency"></td>
+        </tr>
+    </tfoot>
+</table>
+
+ ====================== 'table expample'  ====================== -->     
+
+
+  </form>
+{% else %}
+  {% comment %}
+    The cart is empty
+  {% endcomment %}
+  <h2>{{ 'cart.general.title' | t }}</h2>
+  <p>{{ 'cart.general.empty' | t }}</p>
+  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+{% endif %}
+
+</div>

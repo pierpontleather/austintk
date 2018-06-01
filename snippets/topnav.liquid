@@ -1,0 +1,42 @@
+<!-- ==== TOP LEVEL CUSTOMER NAVIGATION LINKS ==-->
+<nav class="topnav">
+  <div class="topnav__box grid">
+    <div class="topnav--grid-item-1 grid__item medium-up--one-half small--one-whole">
+      <ul class="topnav__alert">
+        <li class="topnav__alert-message">
+          <span class="topnav__alert-message-text">FREE U.S. SHIPPING & RETURNS - ALWAYS<span>
+        </li>
+      </ul>
+    </div>
+    <div class="topnav--grid-item-2 grid__item medium-up--one-half small--hide">
+      {% if shop.customer_accounts_enabled %}
+      <ul class="topnav__menu grid__item medium-up--one-half medium-down--hide">
+          <li class="topnav__assistant-phone">
+          <a class="topnav__assistant-phone-text">1.214.810.0948</a>
+          </li>
+          <li class="topnav__dividing-line">
+            <hr>
+          </li>
+            {% if customer %}
+          <li class="top-nav__customer-login">
+            {% if customer.first_name != blank %}
+              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+            {% else %}
+              <a href="/account">{{ 'layout.customer.account' | t }}</a>
+            {% endif %}
+          </li>
+          <li>/</li>
+          <li class="top-nav__customer-logout">
+            {{ 'layout.customer.log_out' | t | customer_logout_link }}
+          </li>
+        {% else %}
+          <li class="top-nav__visitor-login">
+            {{ 'Login'| customer_login_link }}
+          </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+    </div>
+</nav>

@@ -1,0 +1,144 @@
+<footer class="site-footer" role="contentinfo">
+
+  <div class="footer__container">
+
+   
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+          {% when 'menu' %}
+          <div class="footer_block footer__menu">
+            <ul class="site-footer__menu">
+            {% assign menu = linklists[block.settings.menu] %}
+            {% for link in menu.links %}
+            {% capture my_footer_variable %}{% cycle 'group7': '1', '2', '3', '4' %}{% endcapture %}
+            {% capture my_altfooter_variable %}{% cycle 'group8': '', '2', '3', '4' %}{% endcapture %}
+            {% if link.links != blank %}
+            <li class="footer-li{{ my_footer_variable }} footer-list-item">
+            <ul class "column">
+              <li class="column-li">
+              <div class="footer-lia-container-all footer-lia-{{ my_footer_variable }}-container" >
+                <a class="footer-lia_all footer-lia-{{ my_footer_variable }}" href="#">{{ link.title }}</a>
+              </div>
+              <div class= "footer-megamenu{{ my_altfooter_variable }} footer-megamenutop">					
+                <ul class= "footer-megalist{{ my_altfooter_variable }}">
+                  {% for sub_link in link.links %}
+                  <div class="menu2-footer">
+                    <li class="footer-title footer-sublistitem">{{ sub_link.title }}</li>
+                    {% if sub_link.links != blank %}
+                    {% for sub_sub_link in sub_link.links %}
+                    <li class={% cycle 'group6': '"footer-sublistitem lia1"', '"footer-sublistitem lia2"', '"footer-sublistitem lia3"', '"footer-sublistitem lia4"', '"footer-sublistitem lia5"' %}><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>                            
+                    {% endfor %}
+                    {% endif %}
+                  </div>                  											
+                {% endfor %}
+                </ul>										
+              </div>
+              </li>
+              </ul>
+            </li>
+            {% elsif link.links == blank %}
+            <li class="footer-list-item footer-li{{ my_footer_variable }}">
+            <ul class "column">
+              <li class="column-li">
+              <div class="footer-lia-container-all footer-lia-{{ my_footer_variable }}-container">
+                <a class="footer-lia_all footer-lia-{{ my_footer_variable }}" href="#">{{ link.title }}</a>
+                <span class="footer-mobile-nav-sub-arrow{{ my_altfooter_variable }}"></span>
+              </div>
+                </li>
+              </ul>
+            </li>
+            {% endif %}
+            {% endfor %}
+            <li class="footer-list-item footer-newsletter-div">
+            <div class="footer_block footer__newsletter">
+              <span class="site-footer__section-title footer-lia_all">{{ 'general.newsletter_form.newsletter_heading' | t }}</span>
+             {% include 'newsletter' %}
+          </div>
+            </li>
+            </ul>
+          </div>
+
+        {% when 'text' %}
+          <div class="footer_block footer__text">
+            {% if block.settings.title %}
+              <h5 class="site-footer__section-title">{{ block.settings.title | escape }}</h5>
+            {% endif %}
+            <div class="rte">{{ block.settings.richtext }}</div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+
+    </div>
+
+  {% if section.blocks.size > 0 %}
+   <div class="divider"></div>
+  {% endif %}
+
+  <div class="sub-footer">
+    <div class="sub-footer-contact-us">
+    <a href="/pages/terms-of-service">Terms</a> ⋄ <a href="/pages/privacy-policy">Privacy</a>
+    </div>
+    <div class="PierpontLeatherCopyright">
+      {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}
+    </div>
+         
+        </ul>
+      </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Links"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Contact us"
+          },
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Text",
+            "default": "<p>Use this text to share information about your brand with your customers.</p>"
+          }
+        ]
+      },
+      {
+        "type": "newsletter",
+        "name": "Newsletter signup",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

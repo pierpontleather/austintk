@@ -1,0 +1,20 @@
+{% form 'customer' %}
+  {% if form.posted_successfully? %}
+    <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+  {% else %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <label for="NewsletterEmail" class="site-footer__newsletter-label footer-sublistitem">{{ 'general.newsletter_form.newsletter_label' | t }}</label>
+    <div class="input-group input-group__main">
+      <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off">
+      <div class="input-group__btn">
+        <button type="submit" name="commit" id="Subscribe">
+           <span class="icon-send-span" {% if has_page_content %}class="medium-up--hide"{% endif %}>{% include 'icon-send' %}</span>
+          {% if has_page_content %}
+            <span class="small--hide">{% include 'icon-send' %}</span>
+          {% endif %}
+        </button>
+      </div>
+    </div>
+    {{ form.errors | default_errors }}
+  {% endif %}
+{% endform %}

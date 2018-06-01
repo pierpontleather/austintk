@@ -1,0 +1,149 @@
+/*==================== BASIC COLOR SCHEME VARIABLES ================== */
+$black: #000;
+$white: #fff;
+
+$colorPrimary: #3c6382;
+$colorPrimaryDark: darken($colorPrimary, 10%);
+$colorPrimaryLight: lighten($colorPrimary, 10%);
+$colorSecondary:#d35400;
+$colorSecondaryDark: darken($colorSecondary, 10%);
+$colorSecondaryLight: lighten($colorSecondary, 10%);
+
+/*==================== SURFACE COLORS VARIABLES ================== */
+
+$color-body: $white;
+$colorNav: $color-body;
+$surfaceColor: $white;
+$surfaceColor900:#212121;
+$surfaceColor800:#424242;
+$surfaceColor700:#616161;
+$surfaceColor600:#757575;
+$surfaceColor500:#9E9E9E;
+$surfaceColor400:#BDBDBD;
+$surfaceColor300:#E0E0E0;
+$surfaceColor200:#EEEEEE;
+$surfaceColor100:#F5F5F5;
+$surfaceColor50:#FAFAFA;
+
+/*==================== TEXT COLORS VARIABLES ================== */
+
+$textPrimary: #212121;
+$textSecondary: #424242;
+$textDisabled: rgba($black, .38);
+
+/*==================== SITE VARIABLES FOR GRID / GUTTER / DRAWERS ================== */
+
+/*============================================================================
+  Grid Breakpoints and Class Names
+    - Do not change the variable names
+==============================================================================*/
+$grid-small: 450px;
+$grid-medium: 780px;
+$grid-large: 990px;
+$grid-widescreen: 1500px;
+$grid-gutter: 30px;
+
+$mobile: 'mobile';
+$small: 'small';
+$small-up: 'small-up';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+
+// The `$breakpoints` list is used to build our media queries.
+// You can use these in the media-query mixin.
+$breakpoints: (
+  $mobile '(max-width: #{$grid-small - 1})', 
+  $small-up '(min-width: #{$grid-small})',
+  $small '(max-width: #{$grid-medium - 1})',
+  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+  $medium-down '(max-width: #{$grid-large - 1})',
+  $medium-up '(min-width: #{$grid-medium})',
+  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+  $large-down '(max-width: #{$grid-widescreen - 1})',
+  $large-up '(min-width: #{$grid-large})',
+  $widescreen '(min-width: #{$grid-widescreen})'
+);
+
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+    - Will not work if `styles/global/grid.scss` is removed
+==============================================================================*/
+$breakpoint-has-widths: ($small, $medium-up);
+$breakpoint-has-push: ();
+
+/*================ Sizing Variables ================*/
+$width-site: 1180px;
+$gutter: 20px;
+
+/*================ Z-Index ================*/
+
+$z-index-dropdown: 2;
+$z-index-skip-to-content: 10000; // really high to be safe of app markups...
+
+/*================ SVG ================*/
+
+$svg-select-icon: url(//cdn.shopify.com/s/files/1/1323/5229/files/favicon_1e5e1221-dd69-4251-afa6-77a56ee28d78_32x32.png?v=1500052019);
+
+/*================ TYPOGRAPHY VARIABLES FOR TIMBER AJAX DRAWER ================*/
+
+// Drawers
+$drawerNavWidth: 300px;
+$drawerCartWidth: 300px;
+$colorDrawers: $surfaceColor100;
+$colorDrawerBorder: darken($colorDrawers, 5%);
+$colorDrawerText: $textPrimary;
+$drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
+// Sizing variables
+$siteWidth: $width-site;
+$gridGutter: $grid-gutter; // can be a %, but nested grids will have smaller margins because of it
+$radius: 3px;
+// Z-index
+$zindexDrawer: 10000;
+$zindexNavDropdowns: 10;
+// Typography
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-stack-header: 'Alegreya', 'Alegreya Sans', Helvetica, Arial, sans-serif;
+$font-weight-header: $font-weight-bold;
+$font-stack-body: 'Alegreya Sans', 'Alegreya', Helvetica, Arial, sans-serif;
+$font-size-base: 1.6rem;
+$headerFontStack: $font-stack-header;
+$headerFontWeight: $font-weight-bold;
+$bodyFontStack: $font-stack-body;
+$baseFontSize: $font-weight-bold;
+
+/*==================== ALIAS COLOR VARIABLES ================== */
+
+//Primary Colors
+$color-main: #01579b;
+$color-main-dark: #002f6c;
+$color-main-light: #4f83cc;
+$color-accent: #dd2c00;
+$color-accent-dark: #a30000;
+$color-accent-light: #ff6434;
+$color-primary: $black;
+$color-body-text: $textPrimary;
+$color-body-secondary: $textSecondary;
+$color-body-tertiary: $textDisabled;
+$color-body-text-hover: lighten($textPrimary, 30%);  
+// Border colors
+$color-border: rgba($surfaceColor, .12);
+$color-grey-dark: $surfaceColor300;
+$color-grey: $surfaceColor100;
+$color-grey: $surfaceColor50;
+$color-white: $surfaceColor;
+$color-black: $black;
+// Helper colors for form error states
+$color-disabled: $textDisabled;
+$color-disabled-border: $textDisabled;
+$color-error: $colorSecondary;
+$color-error-bg: $color-body;
+$color-success: $colorPrimary;
+$color-success-bg: $color-body;

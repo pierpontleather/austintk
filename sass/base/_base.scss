@@ -1,0 +1,49 @@
+/*================ Slate specific reset ================*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  list-style: none;
+}
+
+html {
+  // This defines what 1 rem will be (equivilent to 10px).
+  font-size: 62.5%;
+
+  #MainContent {
+    padding-top: 9.6rem;
+    top: 0rem;
+}
+
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-body;
+}
+
+.page-width {
+  @include clearfix();
+  max-width: $width-site;
+  padding: 0 $gutter;
+  margin: 0 auto;
+}
+
+
+body,
+input,
+textarea,
+button,
+select {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+/*=============================*/

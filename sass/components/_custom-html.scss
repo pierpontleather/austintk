@@ -1,0 +1,42 @@
+.welcome-pierpont-banner {
+    background-color: #fff;
+    display: grid;
+    grid-template: repeat(10,10%) / repeat(10,10%);
+    padding: 5% 0 0 0;
+}
+
+.welcome-content {
+    grid-area: 3 / 3 / 7 / -3;
+    z-index: 1;
+}
+
+.welcome-image {
+   grid-area: 7 / 2 / 10 / -2;
+   
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+}
+
+.custom-subtitle {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+@include media-query($small) {
+    .welcome-image {
+        grid-area: 5/ 1 / 10 / -1;
+    }
+}
+
+@include media-query($medium-up) {
+    .welcome-image {
+        grid-area: 4 / 1 / 10 / -1;
+    }
+
+    .welcome-pierpont-banner {
+        padding: 5%;
+    }
+}

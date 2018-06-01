@@ -1,0 +1,175 @@
+// MAIN SECTION DIV //
+div#shopify-section-product {
+    padding: 32px 0px;
+    max-width: 108rem;
+}
+
+// OTHER STYLES //
+
+.productimage__container {
+    //width: 1080px;
+    margin: 0 auto;
+} 
+.productimage__carosel-container {
+    width: 480px;
+    position: relative;
+    display: inline-block;
+}
+
+button.slick-next.slick-arrow {
+    width: 30px;
+    height: 100%;
+    background: rgba(255,255,255,.0);
+    position: absolute;
+    right: -30px;
+    border: none;
+    color: transparent;
+    &:before {
+        content: "";
+        background-image: url(https://cdn.shopify.com/s/files/1/1323/5229/t/24/assets/arrow-forward.svg?15644267786429336629);
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+    &:focus {
+    outline: none;
+    }
+}
+
+button.slick-prev.slick-arrow {
+    width: 30px;
+    height: 100%;
+    background: rgba(255,255,255,.0);
+    position: absolute;
+    left: -30px;
+    border: none;
+    color: transparent;
+    &:before {
+        content: "";
+        background-image: url(https://cdn.shopify.com/s/files/1/1323/5229/t/24/assets/arrow-backwards.svg?16200062048354486364);
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+    &:focus {
+    outline: none;
+    }
+}
+
+.slick-dots {
+    bottom: 10px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slick-dots li {
+    padding: 0 10px;
+}
+
+.slick-dots li button {
+    color: transparent;
+    background: transparent;
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    transition: all .2s ease-in-out;
+    border: 1px solid rgba(0,0,0,.25);
+}
+
+.slick-dots .slick-active button {
+    background: rgba(0,0,0,.25);
+}
+
+
+@include media-query($small) {
+    .productimage__container, 
+    .productimage__carosel-container {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+button#reset {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+}
+
+button#zoom-in {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0,0,0,.15);
+    padding: 5px 10px;
+    border: none;
+}
+button#zoom-out {
+    display: none;
+}
+
+svg#search-reverse {
+    fill: white;
+}
+
+
+// ================  PRODUCT IMAGE ZOOM CSS ================//
+
+// Class for body to prevent scrolling when zoomed 
+.body__is-zoomed {
+    min-height: 100vh;
+    overflow: hidden;
+    //position: fixed;
+    margin-right: 0px;
+
+    .overlay {
+        overflow: hidden;
+        overflow: scroll;
+    }
+}
+// Main Overlay Class
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    background: rgba($white,.9);
+}
+// Activated on .overlay when product photo is clicked
+.overlay-show {
+    display: block;
+    overflow: hidden;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.productimage__container {
+    width: 1024px;
+    
+}
+
+// Changing size of overlay for mobile
+@include media-query($small) {
+    .overlay {
+        //width: 700px;
+    }
+    .overlay-show {
+       // width: 700px;
+    }
+
+}
+
+
+

@@ -1,0 +1,136 @@
+.button-checkout.slideout {
+    border: none;
+}
+
+
+.Slideout__cart-container {
+    display: block;
+    width: 360px;
+    background: $white;
+    position: fixed;
+    right: -360px;
+    top: 0px;
+    border: 1px solid $surfaceColor200;
+    padding: 9.5rem 15px 20px;
+    margin: 16px auto;
+    z-index: -1;
+    transform: translateX(0px);
+    transition: all .3s ease-in-out .5s;
+}
+
+.Slideout__cart-hover {
+    transform: translateX(-360px);
+    transition: all .3s ease-in-out .2s;
+}
+
+.cart__product.slideout  {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    .cart-label-quantity.slideout {
+        grid-column: 2 / 3;
+        grid-row: 1;
+        text-align: center;
+        align-self: end;
+        justify-self: start;
+        padding-left: 2.5rem;
+    }
+
+    .cart__item-title.slideout {
+        grid-column: 2 / 5;
+        padding-left: 2.5rem;
+        grid-row: 1;
+        align-items: start;
+    }
+
+    .cart-label-total.slideout {
+        grid-column: 3 / -1;
+        text-align: right;
+        grid-row: 1;
+        align-self: end;
+        height: 30px;
+        padding: 6px 0px 0px;
+    }
+    .cart__remove-wrap {
+        grid-column: 5 / -1;
+        grid-row: 1;
+        text-align: right;
+    }
+}
+
+.Slideout__cart-products {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.cart__product .cart__product-image.slideout {
+    width: 50px;
+    grid-column: 1 / 2;
+}
+
+.cart-label-total-text.slideout {
+    font-size: 1.3rem;
+}
+
+.cart__product-title-text.slideout {
+    color: $surfaceColor700;
+    text-transform: uppercase;
+    margin: 0px;
+    font-size: 1.2rem;
+    letter-spacing: .05em;
+    font-weight: 600;
+}
+
+p.shipping_returns_cta.slideout::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: $surfaceColor200;
+    display: block;
+    margin-top: 1.6rem;
+    margin-left: 0;
+}
+
+.cart__product .cart-label-quantity.slideout {
+    margin-bottom: .2rem;
+}
+
+p.your-bag.slideout.slideout.subtitle1 {
+    font-size: 1.4rem;
+    color: $surfaceColor700;
+    letter-spacing: .05em;
+    font-weight: 700;
+    margin-bottom: .4rem;
+    margin-top: 0;
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: $surfaceColor200;
+        display: block;
+        margin-top: 1.6rem;
+        margin-left: 0;
+    }
+}
+
+.no-products-in-cart-message {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding: 10% 10% 16%;
+    font-size: 1.5rem;
+    letter-spacing: .05em;
+    text-transform: initial;
+    font-weight: 400;
+    color: $surfaceColor800;
+}
+
+.cart__container-ascend {
+    padding: 6.5rem 15px 16px;
+}
+
+p.shipping_returns_cta.slideout {
+    text-align: center;
+    padding: 0;
+}

@@ -1,0 +1,144 @@
+<div class="main-menu__clearfix clearfix">
+<section class="section-main-nav" itemscope itemtype="http://schema.org/Organization">
+    
+<div class="nav">
+	<div class="container">
+		<ul class="list">
+			<li class="Logo">
+			<a href="/"><img src="{{ 'logo.svg' | asset_url }}" alt="logo"></a>
+			</li>
+			{% assign menu = linklists.main-menu-new %}
+			{% for link in menu.links %}
+			{% capture my_variable %}{% cycle 'group1': '1', '2', '3', '4' %}{% endcapture %}
+			{% capture my_altvariable %}{% cycle 'group2': '', '2', '3', '4' %}{% endcapture %}
+			{% if link.links != blank %}
+			<li class="list-item li{{ my_variable }}"><a href="#" onclick="showDrawer{{ my_altvariable }}()">{{ link.title }}<span class="mobile-nav-sub-arrow{{ my_altvariable }}">▾</span></a>
+				<div class= "megamenu{{ my_altvariable }} megamenutop">					
+					<ul class= "megalist{{ my_altvariable }}">
+						{% for sub_link in link.links %}
+						<div class = menu2>
+							<li class="title sublistitem">{{ sub_link.title }}</li>
+							{% if sub_link.links != blank %}
+							{% for sub_sub_link in sub_link.links %}
+							<li class={% cycle 'group5': '"sublistitem lia1"', '"sublistitem lia2"', '"sublistitem lia3"', '"sublistitem lia4"', '"sublistitem lia5"' %}><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>                            
+							{% endfor %}
+							{% endif %}
+						</div>												
+					{% endfor %}
+					</ul>										
+				</div>
+			</li>
+			{% elsif link.links == blank %}
+			<li class="list-item li{{ my_variable }}"><a href="#" onclick="showDrawer{{ my_altvariable }}()">{{ link.title }}</a>
+			{% endif %}
+			{% endfor %}
+            <div class="cart-navigation site-header__cart-toggle" aria-controls="CartDrawer" aria-expanded="false">
+				<a href="/cart" class="icon">
+                <img src="{{ 'bag.svg' | asset_url }}" alt="cart icon" aria-hidden="true">
+				<span class="item-count CartCount" data-cart-render="item_count"></span>
+                </a>
+				{% if settings.ajax_cart_method == "drawer" %}{% endif %}
+				{% include 'cart-slideout' %}
+				
+            </div>
+            <div class="nav-search">
+                <form autocomplete="off" class="nav-search-form">
+                    <div class="nav-search-inner">
+                        <input class="searchinput" type="search" name="search"/>
+                        <div class="close-search-button">
+                            <i class="close-search-icon">{% include 'icon-close-small' %}</i>
+                        </div> 
+                    </div>
+                </form>
+                <div class="nav-search-button">
+                    <i class="nav-search-icon">{% include 'icon-search' %}</i>
+                </div>
+            </div>
+		</ul>
+	</div>
+
+<!-- Mobile 'Nav' -->
+	<div class="mobile-container">
+		<div class="header-mobile grid">
+		<!-- Menu Button -->
+			<div onclick="openNav()" class="menu-toggle grid__item small--one-sixth">
+			<span href="#" class="menu-toggle-icon"></span>
+			</div>
+		<!-- Logo -->
+			<div class="Logo grid__item small--two-thirds"> <a href="/">
+			 <img src="{{ 'logo-mobile.svg' | asset_url }}" alt="logo">
+			 </a>
+			 </div>
+		<!-- Cart Icon -->
+			<div class="cart-navigation grid__item small--one-sixth">
+            	<a href="/cart" class="icon site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+                <img src="{{ 'bag.svg' | asset_url }}" alt="cart icon" aria-hidden="true">
+				<span class="item-count CartCount" data-cart-render="item_count"></span>
+				 </a>
+            </div>
+		</div>
+
+		<!-- Search 
+			<div class="nav-search" onmouseover="searchAnimateOpen()" onmouseout="searchAnimateClose()">
+                <form autocomplete="off" class="nav-search-form">
+                    <div class="nav-search-inner">
+                        <input class="searchinput" type="search" name="search"/>
+                        <div class="close-search-button">
+                            <i class="close-search-icon">{% include 'icon-close-small' %}</i>
+                        </div>
+                    </div>
+                </form>
+                <div class="nav-search-button">
+                    <i class="nav-search-icon">{% include 'icon-search' %}</i>
+                </div>
+            </div>
+			-->
+
+			<ul class="list mobile-nav-closed">
+			{% assign menu = linklists.main-menu-new %}
+			{% for link in menu.links %}
+			{% capture my_variable %}{% cycle 'group1': '1', '2', '3', '4' %}{% endcapture %}
+			{% capture my_altvariable %}{% cycle 'group2': '', '2', '3', '4' %}{% endcapture %}
+			{% if link.links != blank %}
+			<li class="list-item li{{ my_variable }}">
+				<div class="lia-container-all lia-{{ my_variable }}-container" onclick="showDrawer{{ my_altvariable }}()">
+					<a class="lia_all lia-{{ my_variable }}" href="#">{{ link.title }}</a>
+					<span class="mobile-nav-sub-arrow{{ my_altvariable }}">▾</span>
+				</div>
+				<div class= "megamenu{{ my_altvariable }} megamenutop">					
+					<ul class= "megalist{{ my_altvariable }}">
+						{% for sub_link in link.links %}
+						<div class = menu2>
+							<li class="title sublistitem">{{ sub_link.title }}</li>
+							{% if sub_link.links != blank %}
+							{% for sub_sub_link in sub_link.links %}
+							<li class={% cycle 'group5': '"sublistitem lia1"', '"sublistitem lia2"', '"sublistitem lia3"', '"sublistitem lia4"', '"sublistitem lia5"' %}><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>                            
+							{% endfor %}
+							{% endif %}
+						</div>												
+					{% endfor %}
+					</ul>										
+				</div>
+			</li>
+			{% elsif link.links == blank %}
+			<li class="list-item li{{ my_variable }}">
+				<div class="lia-container-all lia-{{ my_variable }}-container" onclick="showDrawer{{ my_altvariable }}()">
+					<a class="lia_all lia-{{ my_variable }}" href="#">{{ link.title }}</a>
+					<span class="mobile-nav-sub-arrow{{ my_altvariable }}"></span>
+				</div>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+
+</section>
+</div>
+
+
