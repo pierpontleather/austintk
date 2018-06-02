@@ -3,12 +3,14 @@ $(document).ready(function () {
     $('.productimage__thumbnail--list').slick({
         slidesToShow: 1,
         focusOnSelect: true,
+        arrows: false,
         //centerMode: true,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 1,
+                    arrows: false,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true
@@ -18,6 +20,7 @@ $(document).ready(function () {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
+                    arrows: false,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true
@@ -27,6 +30,7 @@ $(document).ready(function () {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
+                    arrows: false,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true
@@ -41,7 +45,12 @@ $(document).ready(function () {
     });
 });
 
-
+$('.button-slider-next').on('click', function(e) {
+    $('.productimage__thumbnail--list').slick('slickNext');
+});
+$('.button-slider-previous').on('click', function (e) {
+    $('.productimage__thumbnail--list').slick('slickPrev');
+});
 
 $('.productimage__thumbnail--list').on('click', function (event, slick, currentSlide, nextSlide) {
     var $selectedImageUrl = $('.slick-current div li a').attr('href');

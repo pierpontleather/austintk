@@ -8,11 +8,11 @@ assets/PIERPONTLEATHERCREST.svg:
 assets/PIERPONTLEATHERLOGOA.svg:
   development: 2018-05-17T14:29:00-05:00   7c79a8bfbb4c80fb4832cc0f83e5fb5e
 assets/arrow-backwards.svg:
-  development: 2018-05-29T01:30:24-05:00   870690d288f124530703b21807a410c7
+  development: 2018-06-02T13:31:49-05:00   1bbb5a02ae484f6bc55075d70c8c052f
 assets/arrow-forward.svg:
   development: 2018-05-29T01:14:54-05:00   34ad64270469944a598e719cf9c29444
 assets/babel-compiled.js:
-  development: 2018-05-31T14:57:47-05:00   9d45b301da2eabc22e9e331d6cd2556c
+  development: 2018-06-02T13:49:06-05:00   16dd2b46fa0554054096561d583e08d5
 assets/bag-fill.svg:
   development: 2018-05-19T10:07:44-05:00   614713594af66574b3681de85290f3f9
 assets/bag.svg:
@@ -64,7 +64,7 @@ assets/shopping-bag.svg:
 assets/theme.js:
   development: 2018-05-30T18:27:00-05:00   48ffe4a30b6a6eeed2ca71059e005c77
 assets/theme.scss.liquid:
-  development: 2018-05-31T16:16:16-05:00   6110164316b0df0e2ba13bc654a3c1fb
+  development: 2018-06-02T13:46:36-05:00   c4d64b1a47739ce81bde311785e55974
 assets/vendor.js:
   development: 2018-05-31T09:57:29-05:00   275ce3de2341e3a63498ed54a3c5285c
 assets/walletcomparison2.jpg:
@@ -86,7 +86,7 @@ layout/gift_card.liquid:
 layout/password.liquid:
   development: 2018-05-01T10:02:24-05:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  development: 2018-05-31T14:49:55-05:00   128c820876dc397a9ae96ad2e554d1ba
+  development: 2018-06-02T13:01:25-05:00   c53f7972dcd52fbf407a9cce7ea0c562
 locales/da.json:
   development: 2018-05-01T10:04:25-05:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -118,7 +118,7 @@ sections/header.liquid:
 sections/nothome-collection-list.liquid:
   development: 2018-05-28T17:53:49-05:00   43d0a107849db3894e1898b6603c6328
 sections/product.liquid:
-  development: 2018-05-31T16:23:24-05:00   ebb38dc4fdd097f170dfd14370467ce2
+  development: 2018-06-02T13:44:56-05:00   3e725c31e59b8c4d5826f7e273b804af
 sections/slideshow.liquid:
   development: 2018-05-17T21:57:17-05:00   9be86d8fea2b8511f5d4cea098561f95
 snippets/breadcrumbs.liquid:
@@ -179,12 +179,16 @@ snippets/icon-master.liquid:
   development: 2018-05-01T10:02:26-05:00   a8160577c52110a093d7120692bb6241
 snippets/icon-minus.liquid:
   development: 2018-05-01T10:02:26-05:00   78c513424d498299e865f8a242823ad0
+snippets/icon-next.liquid:
+  development: 2018-06-02T13:32:33-05:00   274a7803b8b61b653407e24c06553369
 snippets/icon-paypal.liquid:
   development: 2018-05-01T10:02:26-05:00   1b0d7db160b229b8519cccf2514ee676
 snippets/icon-pinterest.liquid:
   development: 2018-05-01T10:02:26-05:00   701f2a785b3fa83d63e3ab54af060031
 snippets/icon-plus.liquid:
   development: 2018-05-01T10:02:26-05:00   ba5297f64eb7ea97f1785e8166e11231
+snippets/icon-previous.liquid:
+  development: 2018-06-02T13:31:53-05:00   6f4efdb4829b91e1e4ef8389a25bb4b5
 snippets/icon-rss.liquid:
   development: 2018-05-01T10:02:26-05:00   192c99ddafd680c55f2fd9261df8d871
 snippets/icon-search-reverse.liquid:

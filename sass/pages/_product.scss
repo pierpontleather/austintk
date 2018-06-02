@@ -16,44 +16,14 @@ div#shopify-section-product {
     display: inline-block;
 }
 
-button.slick-next.slick-arrow {
-    width: 30px;
-    height: 100%;
-    background: rgba(255,255,255,.0);
-    position: absolute;
-    right: -30px;
+.button-slider-next {
+    background: transparent;
     border: none;
-    color: transparent;
-    &:before {
-        content: "";
-        background-image: url(https://cdn.shopify.com/s/files/1/1323/5229/t/24/assets/arrow-forward.svg?15644267786429336629);
-        width: 30px;
-        height: 30px;
-        display: block;
-    }
-    &:focus {
-    outline: none;
-    }
 }
 
-button.slick-prev.slick-arrow {
-    width: 30px;
-    height: 100%;
-    background: rgba(255,255,255,.0);
-    position: absolute;
-    left: -30px;
+.button-slider-previous {
+    background: transparent;
     border: none;
-    color: transparent;
-    &:before {
-        content: "";
-        background-image: url(https://cdn.shopify.com/s/files/1/1323/5229/t/24/assets/arrow-backwards.svg?16200062048354486364);
-        width: 30px;
-        height: 30px;
-        display: block;
-    }
-    &:focus {
-    outline: none;
-    }
 }
 
 .slick-dots {
@@ -173,3 +143,7 @@ svg#search-reverse {
 
 
 
+.product-photo-container {
+    display: flex;
+    align-items: center;
+}

@@ -12,18 +12,22 @@
     <h1 class="product-title h5">{{ product.title }}</h1>
     <p>{{ product.vendor }}</p>
   </div>
-  <div class="productimage__carosel-container">
-    {% if product.images.size > 1 %}
-      <ul class="productimage__thumbnail--list">
-        {% for image in product.images %}
-          <li>
-            <a href="{{ image.src | img_url: '1500x' }}" data-product-single-thumbnail></a>
-            <img src="{{ image.src | img_url: '1080x1080' }}" alt="{{ image.alt | escape }}">
-            
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+  <div class="product-photo-container">
+    <button class="button-slider-previous">{% include 'icon-previous' %}</button>
+      <div class="productimage__carosel-container">
+        {% if product.images.size > 1 %} 
+          <ul class="productimage__thumbnail--list">
+            {% for image in product.images %}
+              <li>
+                <a href="{{ image.src | img_url: '1500x' }}" data-product-single-thumbnail></a>
+                <img src="{{ image.src | img_url: '1080x1080' }}" alt="{{ image.alt | escape }}">
+                
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    <button class="button-slider-next">{% include 'icon-next' %}</button>
   </div>
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
