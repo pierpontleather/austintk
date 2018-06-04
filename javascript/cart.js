@@ -1,3 +1,4 @@
+
 function constructCart() {
     let $noProductsInCartYet = $('.no-products-in-cart-message');
     let $freeShippingAndReturns = $('.shipping_returns_cta.slideout');
@@ -7,7 +8,7 @@ function constructCart() {
     if (CartJS.cart.item_count == 0) {
         $noProductsInCartYet.text("You don't have anything in your bag yet!");
         //Write that they don't have anything in their bag yet
-        $noProductsInCartYet.css("display", "inline-block", );
+        $noProductsInCartYet.css("display", "none", );
         //Display the Nothing in your bag message
         $freeShippingAndReturns.hide();
         //Hide the free shipping CTA
@@ -33,7 +34,8 @@ function constructCart() {
 
 
 
-$(document).on('cart.requestComplete', function (event, cart) {
+//$(document).on('cart.requestComplete', function (event, cart) { });
+function cartItemCounts() {
     if (CartJS.cart.item_count === 0) {
         $('.cart-navigation .item-count').removeClass('item-count-full');
     } else {
@@ -42,14 +44,17 @@ $(document).on('cart.requestComplete', function (event, cart) {
     
     console.log(CartJS.cart.item_count);
     constructCart();
-});
+}
 
-$('.product-add-to-cart').click(function() {
+//$('.product-add-to-cart').click(function () { });
+function slideOutContainer() {
     $('.Slideout__cart-container').addClass('Slideout__cart-hover');
     setTimeout(function () {
     $('.Slideout__cart-container').removeClass('Slideout__cart-hover');   
     }, 2000);
-});
+}
 
+
+export { constructCart, cartItemCounts, slideOutContainer };
 
  
