@@ -18,9 +18,9 @@ assets/bag-fill.svg:
 assets/bag.svg:
   development: 2018-05-19T10:09:28-05:00   403202d741b09a37516f7317e5503d33
 assets/bundle.css:
-  development: 2018-06-05T21:16:55-05:00   5f360843daaa35d52220c7e44974d49d
+  development: 2018-06-05T21:27:04-05:00   0d61506e8d0290fa49afe5e5636854b0
 assets/bundle.css.map:
-  development: 2018-06-05T21:16:56-05:00   ca085d791adbc93b3fc12e94542734c1
+  development: 2018-06-05T21:27:04-05:00   324207ef1a2bb1863059b236b7a9af54
 assets/fastclick.min.js:
   development: 2018-05-22T12:56:43-05:00   be213fdfda9f3b8e0aa35a4aa562be9d
 assets/giftcard.js:
@@ -76,7 +76,7 @@ assets/scripts.min.js.map:
 assets/shopping-bag.svg:
   development: 2018-05-19T09:44:13-05:00   4ef5d4cc4ff7e0e7d1ab61df6257b02e
 assets/theme.js:
-  development: 2018-06-04T13:38:18-05:00   d2c1a251473edc8ca33a0b977feb8721
+  development: 2018-06-05T23:42:11-05:00   21368bcbd76ade1874ae78715d232fe6
 assets/theme.scss.liquid:
   development: 2018-06-02T13:46:36-05:00   c4d64b1a47739ce81bde311785e55974
 assets/vendor.js:
@@ -100,7 +100,7 @@ layout/gift_card.liquid:
 layout/password.liquid:
   development: 2018-05-01T10:02:24-05:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  development: 2018-06-05T09:57:25-05:00   4b6bd475bbca23bcea4eac30971daa1d
+  development: 2018-06-05T22:44:33-05:00   0841f10be9d6ac5cef5300fcbdf21c1a
 locales/da.json:
   development: 2018-05-01T10:04:25-05:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -260,7 +260,7 @@ templates/article.liquid:
 templates/blog.liquid:
   development: 2018-05-01T10:02:27-05:00   6afa6d4a6ed4b457f72a4c28c536dca9
 templates/cart.liquid:
-  development: 2018-05-26T18:44:17-05:00   32e2b19d374d4c982c5a4dfa42731f89
+  development: 2018-06-05T23:46:35-05:00   b2d666b29e25af7f9b5ef9644422eb90
 templates/collection.liquid:
   development: 2018-05-28T17:54:31-05:00   a7087e034dc58ded2c7cbd2fdc2019ea
 templates/customers/account.liquid:

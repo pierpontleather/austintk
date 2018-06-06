@@ -1067,27 +1067,23 @@ function openNav() {
   $('.menu-toggle').toggleClass('mobile-nav-cross');
 }
 
-function makeActive(textArea, textButton) {
-  var $textButton = $(textButton);
-  var $textCart = $(textArea);
-  $textButton.toggleClass('active');
-  if ($textButton.text() === "clear") {
-    $textButton.text("add");
-  } else {
-    if ($textButton.text() === "add") {
-      $textButton.text("clear");
-    }
-  }
-  if ($textButton.text() === "clear") {
-    $textCart.addClass('text-area-cart-active'); 
 
+
+
+function makeActive(textArea, textButton) {
+  var textButton = document.querySelector(textButton);
+  var $textCart = $(textArea);
+  
+  if (textButton.checked) {
+    $textCart.addClass('text-area-cart-active'); 
+    console.log(textButton.value);
   } else {
-    if ($textButton.text() === "add") {
+      console.log(textButton.value);
       $textCart.removeClass('text-area-cart-active');
       $textCart.val(" ");
       updateCartGiftNote();
       updateCartNote();
-    }
+    
   }
 }
 

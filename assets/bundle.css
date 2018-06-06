@@ -13824,6 +13824,10 @@ p.shipping_returns_cta {
     padding: 0 0 1.2rem 0; }
     .cart__row-totals .text-button {
       text-align: right; }
+  .mdc-switch {
+    -ms-flex-item-align: center;
+    align-self: center;
+    padding-left: 13px; }
   .total-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
