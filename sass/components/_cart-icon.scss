@@ -42,7 +42,7 @@
 // Begin Mobile Cart 
 @include media-query($small) {
   .cart-navigation {
-    padding-top: 1.2rem;
+    padding-top: 1.4rem;
     text-align: right;
     padding-right: 2rem;
     padding-left: 20px;
@@ -82,3 +82,7 @@
 .item-count-full {
     background: $colorPrimary;
   }
+
+  .demo-ready-detect {
+    position: relative; 
+  }    

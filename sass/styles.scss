@@ -1,8 +1,8 @@
-@import "material-components-web/material-components-web";
 /*================ ABSTRACTS ================*/
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
+
 /*================ BASE ================*/
 @import "base/animations";
 @import "base/base";
@@ -12,6 +12,7 @@
 @import "layout/header";
 @import "layout/grid";
 @import "layout/giftcard";
+@import "material-components-web/material-components-web";
 /*================ COMPONENTS ================*/
 @import "components/button";
 @import "components/composition";
@@ -32,3 +33,7 @@
 @import "pages/all-collections";
 @import "pages/_product";
   
+
+iframe#preview-bar-iframe {
+    display: none;
+}

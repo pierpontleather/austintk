@@ -16,3 +16,9 @@ $(document).on('cart.requestComplete', function (event, cart) {
 $('.product-add-to-cart').click(function () { 
     slideOutContainer();
 });
+
+if (document.querySelector('.foo-button')) {
+    mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+}
+
+

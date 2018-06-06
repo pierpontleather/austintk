@@ -1,3 +1,4 @@
+{% include 'breadcrumbs' %}
 <div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
@@ -8,10 +9,9 @@
   <meta itemprop="brand" content="{{ product.vendor }}">
   <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
-  <div class="Item-Title">
-    <h1 class="product-title h5">{{ product.title }}</h1>
-    <p>{{ product.vendor }}</p>
-  </div>
+
+  
+
   <div class="product-photo-container">
     <button class="button-slider-previous">{% include 'icon-previous' %}</button>
       <div class="productimage__carosel-container">
@@ -28,6 +28,11 @@
         {% endif %}
       </div>
     <button class="button-slider-next">{% include 'icon-next' %}</button>
+  </div>
+  <div class="product-desc">
+  <div class="Item-Title">
+    <h1 class="mdc-typography--headline4">{{ product.title }}</h1>
+    <p class="mdc-typography--headline5 small--hide medium-up--hide">{{ product.vendor }}</p>
   </div>
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
@@ -68,12 +73,12 @@
           </option>
         {% endfor %}
       </select>
-
-      <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
-      <input type="number" id="Quantity" name="quantity" value="1" min="1">
-
+      <div class="product-quantity small--hide medium-up--hide">
+        <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+        <input type="number" id="Quantity" name="quantity" value="1" min="1">
+      </div>
       <div data-price-wrapper>
-        <span data-product-price>
+        <span data-product-price class="mdc-typography--subtitle1">
           {{ current_variant.price | money }}
         </span>
 
@@ -86,14 +91,19 @@
           </s>
         {% endif %}
       </div>
+        
+      <div class="rte mdc-typography--body1">
+       {{ product.description }}
+      </div>
 
       <button
+        id="show-snackbar"
         type="submit"
         name="add"
         data-add-to-cart
-        class="product-add-to-cart foo-button mdc-button"
+        class="product-add-to-cart foo-button mdc-button mdc-button--unelevated"
         {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-          <span data-add-to-cart-text>
+          <span data-add-to-cart-text class="add-to-cart-text">
             {% if current_variant.available %}
               {{ 'products.product.add_to_cart' | t }}
             {% else %}
@@ -101,13 +111,15 @@
             {% endif %}
           </span>
       </button>
+      <div class="shipping_returns_productpage">
+          <p class="shipping_returns_cta slideout">{% include 'icon-box-fast' %}<span>&ensp;</span>free U.S. shipping and returns</p>
+        </div>
+
     </form>
 
-  </div>
+  
 
-  <div class="rte">
-    {{ product.description }}
-  </div>
+  
 
   {% if section.settings.show_share_buttons %}
     {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
@@ -117,8 +129,70 @@
     <script type="application/json" data-product-json>
       {{ product | json }}
     </script>
+     
   {% endunless %}
+  </div>
+    <div id="mdc-js-snackbar"
+        class="mdc-snackbar demo-hidden medium-up--hide"
+        aria-live="assertive"
+        aria-atomic="true"
+        aria-hidden="true">
+    <div class="mdc-snackbar__text"></div>
+    <div class="mdc-snackbar__action-wrapper">
+      <button type="button" class="mdc-snackbar__action-button"></button>
+    </div>
+  </div>
+ <!--
+  <div class="pl-snackbar"
+     aria-live="assertive"
+     aria-atomic="true"
+     aria-hidden="true">
+  <div class="pl-snackbar__text">{{ product.title }} added to bag</div>
+  <div class="pl-snackbar__action-wrapper">
+     <a href="/cart" class="pl-snackbar__action-button">Checkout</a>
+  </div>
 </div>
+-->
+
+</div>
+
+<script>
+      demoReady(function() {
+        var MDCSnackbar = mdc.snackbar.MDCSnackbar;
+        var snackbar = new MDCSnackbar(document.getElementById('mdc-js-snackbar'));
+        var actionInput = true;
+        
+        var show = function(sb) {
+          snackbar.dismissesOnAction = true;
+          var data =  {
+            message: "{{ product.title }} added to cart",
+            actionOnBottom: true,
+            multiline: true,
+            timeout: 2750
+          };
+          if (actionInput) {
+            data.actionText = "Checkout";
+            data.actionHandler = function() {
+              window.location.href = '/cart'
+            }
+          }
+          sb.show(data);
+        };
+        
+        // Show and hide events demo
+        snackbar.listen('MDCSnackbar:show', function () {
+          console.log('Received MDCSnackbar:show');
+        });
+        snackbar.listen('MDCSnackbar:hide', function () {
+          console.log('Received MDCSnackbar:hide');
+        });
+        document.getElementById('show-snackbar').addEventListener('click', function() {
+          show(snackbar);
+        });
+     
+        document.body.classList.remove('loading');
+      });
+    </script>
 
 {% schema %}
   {

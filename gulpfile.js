@@ -15,11 +15,12 @@ var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 
-var jsSrc = 'scripts.js';
+var jsSrc = ['scripts.js', 'imports.js'];
 var jsFolder = './javascript/'
 var jsDist = './assets';
 var jsWatch = './javascript/**/*.js';
-var jsFiles = [jsSrc];
+var jsFiles = jsSrc;
+
 
 gulp.task('js', function() {
     jsFiles.map( function( entry ){

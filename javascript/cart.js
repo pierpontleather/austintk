@@ -52,6 +52,11 @@ function slideOutContainer() {
     setTimeout(function () {
     $('.Slideout__cart-container').removeClass('Slideout__cart-hover');   
     }, 2000);
+
+    $('.pl-snackbar').addClass('pl-snackbar-hvr');
+    setTimeout(function () {
+        $('.pl-snackbar').removeClass('pl-snackbar-hvr');
+    }, 5000);
 }
 
 

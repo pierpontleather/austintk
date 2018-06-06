@@ -1,10 +1,82 @@
-// MAIN SECTION DIV //
+// =============== GLOBAL STYLES FOR MAIN SECTION =============== //
 div#shopify-section-product {
-    padding: 32px 0px;
+    padding: 3.2rem 4rem 4rem;
     max-width: 108rem;
+    margin: auto;
+}
+// ================  GLOBAL STYLES ( MEDIUM-UP ) ================//
+@include media-query(medium-up) {
+    div[data-section-type="product"] {
+        display: flex;
+        justify-content: space-between;
+    }
+    span[data-product-price] {
+        color: $surfaceColor600;
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: .125rem;
+    }
+    .product-desc {
+        padding: 0 0 0 4rem;
+    }
+    #shopify-section-product nav.breadcrumb {
+        padding: 0 3rem .8rem;
+    }
+    #shopify-section-product nav.breadcrumb > a,
+    #shopify-section-product nav.breadcrumb > span { 
+        @include mdc-typography(overline);
+        color: $surfaceColor600;
+    }
+    form[action="/cart/add"] {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    div[data-price-wrapper] {
+        margin: 0 0 .8rem;
+        order: -2;
+    }
+    button#show-snackbar {
+        order: -1;
+        margin: 2.4rem 0;
+    }
+   
 }
 
-// OTHER STYLES //
+.shipping_returns_productpage {
+    order: -2;
+
+    p.shipping_returns_cta.slideout {
+        padding: 1.8rem 0 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        opacity: .7;
+        text-align: center;
+        margin: 0 10px 0 0;
+        color: darken($colorSecondary, 10%);  
+        &::before {
+            content: "";
+            background: none;
+            height: 0px;
+            width: 0px;
+            display: inline-block;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            background: transparent;
+            display: none;
+            margin-top: 0;
+            margin-left: 0;
+        }
+    }
+}
+// ================  PRODUCT IMAGE & SLIDER ================//
+
 
 .productimage__container {
     //width: 1080px;
@@ -52,20 +124,6 @@ div#shopify-section-product {
     background: rgba(0,0,0,.25);
 }
 
-
-@include media-query($small) {
-    .productimage__container, 
-    .productimage__carosel-container {
-        width: 100%;
-    }
-}
-
-
-
-
-
-
-
 button#reset {
     position: absolute;
     top: 10px;
@@ -90,8 +148,7 @@ svg#search-reverse {
     fill: white;
 }
 
-
-// ================  PRODUCT IMAGE ZOOM CSS ================//
+// === PRODUCT IMAGE ZOOM CSS === //
 
 // Class for body to prevent scrolling when zoomed 
 .body__is-zoomed {
@@ -130,20 +187,190 @@ svg#search-reverse {
     
 }
 
-// Changing size of overlay for mobile
-@include media-query($small) {
-    .overlay {
-        //width: 700px;
-    }
-    .overlay-show {
-       // width: 700px;
-    }
-
+img.productimage__main-image {
+    max-width: unset;
 }
 
+
+// OVERLAY FOR MOBILE (PRODUCT PHOTO VIEW)
 
 
 .product-photo-container {
     display: flex;
     align-items: center;
+}
+
+// MODIFY ITEM TITLE TEXT
+
+.Item-Title > H1 {
+    margin: 0rem 0 0.6rem;
+    font-weight: 700; 
+}
+
+div[data-price-wrapper] {
+    margin: 0 0 2.2rem;
+}
+
+//WAIT TO INITIALIZE SLIDER UNTIL JS HAS LOADED
+
+.productimage__thumbnail--list {
+    visibility: hidden;
+}
+.slick-initialized { 
+    visibility: visible; 
+}
+
+// ================  GLOBAL STYLES  ================//
+
+// STYLE MAIN BODY TEXT FOR PRODUCT
+.rte > p {
+    @include mdc-typography(body1);
+    font-size: 1.4rem;
+}
+
+
+// DON'T SHOW SNACKBAR UNTIL IT HAS BEEN INITIALIZED
+.loading .example .mdc-snackbar { 
+    transform: translateY(200%); 
+}
+.mdc-snackbar {
+    z-index: 1;
+}
+
+
+
+
+// ================  "'SMALL' STYLES FOR PRODUCT PAGE" ( MOBILE ONLY ) ================//
+
+@include media-query($small) {
+    p.shipping_returns_cta.slideout .icon-box-fast {
+        fill: darken($colorSecondary, 10%);  ;
+    }
+    .productimage__container, 
+    .productimage__carosel-container {
+        width: 100%;
+    }
+    .button-slider-previous, 
+    .button-slider-next {
+        display: none;
+    
+
+    }
+    
+    div#shopify-section-product {
+    padding: 0px 0px;
+    }
+    
+    .slick-slide img {
+    padding: 0 0;
+    }
+    
+    .product-desc {
+    margin: -1px auto 0px;
+    padding: 3.2rem 6.875% 3.2rem;
+    
+    }
+
+    div[data-price-wrapper] {
+    margin: 1.6rem 0 2.4rem;
+    color: $surfaceColor600;
+    }
+
+    button[name="add"] {
+    width: 100%;
+    }
+
+// SNACKBAR SHIT
+        .pl-snackbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: fixed;
+        bottom: 48px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-right: 24px;
+        padding-left: 24px;
+        -webkit-transition: -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);
+        /* transition: -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1); */
+        transition: transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);
+        transition: transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);
+        background-color: #212121;
+        pointer-events: auto;
+        will-change: transform;left: 0;
+        width: 95%;
+        margin: 0px 2.5% 2.5%;
+        transform: translate(0, 250%);
+        z-index: 1;
+        opacity: .95;
+        @include mdc-elevation(8);
+
+        &:hover {
+            transform: translate(0, 100%);
+        }
+    }
+    .pl-snackbar-hvr {
+        transform: translate(0, 100%);
+    }
+
+    .pl-snackbar__text {
+        font-family: "Cabin", sans-serif;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 0.03125em;
+        text-decoration: inherit;
+        text-transform: inherit;
+        margin-left: 0;
+        margin-right: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 48px;
+        -webkit-transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);
+        transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);
+        opacity: 1;
+        color: white;
+    }
+    .pl-snackbar__action-button {
+        font-family: "Cabin", sans-serif;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1.4rem;
+        line-height: 2.25rem;
+        font-weight: 500;
+        letter-spacing: 0.08929em;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #d35400;
+        color: var(--mdc-theme-secondary, #d35400);
+        padding: 0;
+        -webkit-transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);
+        transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);
+        border: none;
+        outline: none;
+        background-color: transparent;
+        opacity: 1;
+        user-select: none;
+        visibility: visible;
+    }
+    .pl-snackbar__action-wrapper {
+        padding-left: 24px;
+        padding-right: 0;
+    }
+}
+
+.mdc-js-snackbar {
+    @include mdc-elevation(20);
 }

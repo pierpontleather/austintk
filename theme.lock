@@ -18,9 +18,9 @@ assets/bag-fill.svg:
 assets/bag.svg:
   development: 2018-05-19T10:09:28-05:00   403202d741b09a37516f7317e5503d33
 assets/bundle.css:
-  development: 2018-06-04T12:03:21-05:00   b03d0d81c42aafb0aee494c63bc419cc
+  development: 2018-06-05T21:16:55-05:00   5f360843daaa35d52220c7e44974d49d
 assets/bundle.css.map:
-  development: 2018-06-04T12:03:21-05:00   dd6ade81d088482d2077164ecbd731fe
+  development: 2018-06-05T21:16:56-05:00   ca085d791adbc93b3fc12e94542734c1
 assets/fastclick.min.js:
   development: 2018-05-22T12:56:43-05:00   be213fdfda9f3b8e0aa35a4aa562be9d
 assets/giftcard.js:
@@ -39,6 +39,10 @@ assets/icons.ttf:
   development: 2018-05-22T13:55:43-05:00   0678272006d7b08a523ae6973a72d181
 assets/icons.woff:
   development: 2018-05-22T13:55:44-05:00   6d64bee3b4d239a6cf6af98045a95954
+assets/imports.min.js:
+  development: 2018-06-05T09:52:46-05:00   839153fd3f8f668116d4fb9d507e8be2
+assets/imports.min.js.map:
+  development: 2018-06-05T09:52:46-05:00   cfab883e39f48d135084841c2476298c
 assets/logo-main-large.svg:
   development: 2018-05-01T10:02:23-05:00   7eba3ef7f984fea00d8f2ca11c4c3397
 assets/logo-main.svg:
@@ -47,6 +51,8 @@ assets/logo-mobile.svg:
   development: 2018-05-28T13:40:28-05:00   2b6103da8f1d234ca4ca387116fef568
 assets/logo.svg:
   development: 2018-05-28T13:29:43-05:00   f3d91f9a06651547b9a07dcac97a402a
+assets/material.min.js:
+  development: 2018-06-04T15:11:36-05:00   bb314ba9db8a5b83890b72865355bf84
 assets/panzoom.js:
   development: 2018-05-30T14:17:52-05:00   64e335823b4b94d34b25a34ff935f63b
 assets/pierpont-leather-logo-cg.svg:
@@ -64,9 +70,9 @@ assets/respond-proxy.html:
 assets/rivets-cart.min.js:
   development: 2018-05-24T11:46:43-05:00   3fbc557214bbbf2a10b48c4f0a0649f1
 assets/scripts.min.js:
-  development: 2018-06-04T14:25:02-05:00   cdc006a58e21106082fa55724d1b5266
+  development: 2018-06-05T10:08:51-05:00   f55f9acd5d40df48599ede7b287d5187
 assets/scripts.min.js.map:
-  development: 2018-06-04T14:25:01-05:00   035e6cb14c05fb415ba59a9999d2780a
+  development: 2018-06-05T10:08:51-05:00   f776b583a3e26d452a200b9cd2e5a635
 assets/shopping-bag.svg:
   development: 2018-05-19T09:44:13-05:00   4ef5d4cc4ff7e0e7d1ab61df6257b02e
 assets/theme.js:
@@ -94,7 +100,7 @@ layout/gift_card.liquid:
 layout/password.liquid:
   development: 2018-05-01T10:02:24-05:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  development: 2018-06-04T13:28:12-05:00   14e0622702306008deead0a6db654bef
+  development: 2018-06-05T09:57:25-05:00   4b6bd475bbca23bcea4eac30971daa1d
 locales/da.json:
   development: 2018-05-01T10:04:25-05:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -126,13 +132,13 @@ sections/header.liquid:
 sections/nothome-collection-list.liquid:
   development: 2018-05-28T17:53:49-05:00   43d0a107849db3894e1898b6603c6328
 sections/product.liquid:
-  development: 2018-06-04T11:28:33-05:00   049f57a4f5f3a3531d3ff7125c61b6da
+  development: 2018-06-05T15:41:50-05:00   580f5c804d4ea0c913850c1c9b6dfab1
 sections/slideshow.liquid:
-  development: 2018-05-17T21:57:17-05:00   9be86d8fea2b8511f5d4cea098561f95
+  development: 2018-06-05T11:50:48-05:00   6c3d2a6bdaa69347ce83728c10605fb8
 snippets/breadcrumbs.liquid:
   development: 2018-05-28T17:02:15-05:00   efeee44c25e73d2d00402db6c5c1d04f
 snippets/cart-slideout.liquid:
-  development: 2018-05-28T22:16:30-05:00   842a5510a09fa30636ce0058a1b3c8e2
+  development: 2018-06-04T22:28:47-05:00   842a5510a09fa30636ce0058a1b3c8e2
 snippets/icon-amazon_payments.liquid:
   development: 2018-05-01T10:02:25-05:00   b5ff59d6df578a0fc1ca86322682cbaf
 snippets/icon-american_express.liquid:

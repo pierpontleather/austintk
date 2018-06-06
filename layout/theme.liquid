@@ -33,8 +33,10 @@
   {% endif %}
 
   {% include 'social-meta-tags' %}
-
+  {{ 'material.min.js' | asset_url | script_tag }}
+  {{ 'imports.min.js' | asset_url | script_tag }}
   {{ 'bundle.css' | asset_url | stylesheet_tag }}
+  
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -72,7 +74,7 @@
  
 </head>
 
-<body onload="constructCart()" id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} loading">
 
 
 <a class="in-page-link skip-link skip-to-content visually-hidden" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
@@ -115,7 +117,14 @@
             "moneyWithCurrencyFormat": "{{ shop.money_with_currency_format }}"
         });
     });
+      $(function() {
+        FastClick.attach(document.body);
+    });
+
+    
+   
   </script>
 {{ 'scripts.min.js' | asset_url | script_tag }}
+
 </body>
 </html>

@@ -2,13 +2,20 @@
 $black: #000;
 $white: #fff;
 
-$colorPrimary: #3c6382;
+
+
+//$colorPrimary: #34495e;
+$colorPrimary: #34495e;
 $colorPrimaryDark: darken($colorPrimary, 10%);
 $colorPrimaryLight: lighten($colorPrimary, 10%);
-$colorSecondary:#d35400;
+//$colorSecondary: #f4511e;
+$colorSecondary: #f4511e;
 $colorSecondaryDark: darken($colorSecondary, 10%);
 $colorSecondaryLight: lighten($colorSecondary, 10%);
 
+$mdc-theme-primary: $colorPrimary;
+$mdc-theme-secondary: $colorSecondary;
+$mdc-theme-background: #fff;
 /*==================== SURFACE COLORS VARIABLES ================== */
 
 $color-body: $white;
@@ -122,12 +129,12 @@ $baseFontSize: $font-weight-bold;
 /*==================== ALIAS COLOR VARIABLES ================== */
 
 //Primary Colors
-$color-main: #01579b;
-$color-main-dark: #002f6c;
-$color-main-light: #4f83cc;
-$color-accent: #dd2c00;
-$color-accent-dark: #a30000;
-$color-accent-light: #ff6434;
+$color-main: $colorPrimary;
+$color-main-dark: $colorPrimaryDark;
+$color-main-light: $colorPrimaryLight;
+$color-accent: $colorSecondary;
+$color-accent-dark: $colorSecondaryDark;
+$color-accent-light:$colorSecondaryLight;
 $color-primary: $black;
 $color-body-text: $textPrimary;
 $color-body-secondary: $textSecondary;
