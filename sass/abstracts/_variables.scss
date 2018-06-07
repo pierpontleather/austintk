@@ -4,12 +4,12 @@ $white: #fff;
 
 
 
+$colorPrimary: #424242;
 //$colorPrimary: #34495e;
-$colorPrimary: #34495e;
 $colorPrimaryDark: darken($colorPrimary, 10%);
 $colorPrimaryLight: lighten($colorPrimary, 10%);
+$colorSecondary: #34495e;
 //$colorSecondary: #f4511e;
-$colorSecondary: #f4511e;
 $colorSecondaryDark: darken($colorSecondary, 10%);
 $colorSecondaryLight: lighten($colorSecondary, 10%);
 

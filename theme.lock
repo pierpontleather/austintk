@@ -18,9 +18,9 @@ assets/bag-fill.svg:
 assets/bag.svg:
   development: 2018-05-19T10:09:28-05:00   403202d741b09a37516f7317e5503d33
 assets/bundle.css:
-  development: 2018-06-05T21:27:04-05:00   0d61506e8d0290fa49afe5e5636854b0
+  development: 2018-06-06T23:07:56-05:00   a1a7d318037595d23488751e71bc0a71
 assets/bundle.css.map:
-  development: 2018-06-05T21:27:04-05:00   324207ef1a2bb1863059b236b7a9af54
+  development: 2018-06-06T23:07:56-05:00   394fd07fce8862460f876ae5b956a2d4
 assets/fastclick.min.js:
   development: 2018-05-22T12:56:43-05:00   be213fdfda9f3b8e0aa35a4aa562be9d
 assets/giftcard.js:
@@ -43,6 +43,10 @@ assets/imports.min.js:
   development: 2018-06-05T09:52:46-05:00   839153fd3f8f668116d4fb9d507e8be2
 assets/imports.min.js.map:
   development: 2018-06-05T09:52:46-05:00   cfab883e39f48d135084841c2476298c
+assets/loading.gif:
+  development: 2018-06-06T17:35:22-05:00   04a70963076e1335901c98e5c2492ab1
+assets/loading.svg:
+  development: 2018-06-06T17:36:32-05:00   a223eaabf25728c33b6df44477764bda
 assets/logo-main-large.svg:
   development: 2018-05-01T10:02:23-05:00   7eba3ef7f984fea00d8f2ca11c4c3397
 assets/logo-main.svg:
@@ -70,9 +74,9 @@ assets/respond-proxy.html:
 assets/rivets-cart.min.js:
   development: 2018-05-24T11:46:43-05:00   3fbc557214bbbf2a10b48c4f0a0649f1
 assets/scripts.min.js:
-  development: 2018-06-05T10:08:51-05:00   f55f9acd5d40df48599ede7b287d5187
+  development: 2018-06-06T19:50:47-05:00   00a0ea40ef837ceccb547b8a20a5a82a
 assets/scripts.min.js.map:
-  development: 2018-06-05T10:08:51-05:00   f776b583a3e26d452a200b9cd2e5a635
+  development: 2018-06-06T19:50:47-05:00   c2dba6172fd29e861d08e728a6e0d389
 assets/shopping-bag.svg:
   development: 2018-05-19T09:44:13-05:00   4ef5d4cc4ff7e0e7d1ab61df6257b02e
 assets/theme.js:
@@ -100,7 +104,7 @@ layout/gift_card.liquid:
 layout/password.liquid:
   development: 2018-05-01T10:02:24-05:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  development: 2018-06-05T22:44:33-05:00   0841f10be9d6ac5cef5300fcbdf21c1a
+  development: 2018-06-06T17:30:23-05:00   0841f10be9d6ac5cef5300fcbdf21c1a
 locales/da.json:
   development: 2018-05-01T10:04:25-05:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -132,7 +136,7 @@ sections/header.liquid:
 sections/nothome-collection-list.liquid:
   development: 2018-05-28T17:53:49-05:00   43d0a107849db3894e1898b6603c6328
 sections/product.liquid:
-  development: 2018-06-05T15:41:50-05:00   580f5c804d4ea0c913850c1c9b6dfab1
+  development: 2018-06-06T23:06:15-05:00   c4616bfd670f9b81e8ccd00237a7d005
 sections/slideshow.liquid:
   development: 2018-06-05T11:50:48-05:00   6c3d2a6bdaa69347ce83728c10605fb8
 snippets/breadcrumbs.liquid:

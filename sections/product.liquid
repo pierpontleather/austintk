@@ -19,8 +19,11 @@
           <ul class="productimage__thumbnail--list">
             {% for image in product.images %}
               <li>
-                <a href="{{ image.src | img_url: '1500x' }}" data-product-single-thumbnail></a>
-                <img src="{{ image.src | img_url: '1080x1080' }}" alt="{{ image.alt | escape }}">
+                <a href="{{ image.src | img_url: '2000x' }}" data-product-single-thumbnail></a>
+                <div>
+                <img  data-lazy="{{ image.src | img_url: '800x800' }}" {% comment %}src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" {% endcomment %} alt="{{ image.alt | escape }}">
+                </div>
+                
                 
               </li>
             {% endfor %}
@@ -29,6 +32,7 @@
       </div>
     <button class="button-slider-next">{% include 'icon-next' %}</button>
   </div>
+  
   <div class="product-desc">
   <div class="Item-Title">
     <h1 class="mdc-typography--headline4">{{ product.title }}</h1>
@@ -95,7 +99,6 @@
       <div class="rte mdc-typography--body1">
        {{ product.description }}
       </div>
-
       <button
         id="show-snackbar"
         type="submit"
@@ -116,7 +119,7 @@
         </div>
 
     </form>
-
+    
   
 
   
@@ -142,19 +145,9 @@
       <button type="button" class="mdc-snackbar__action-button"></button>
     </div>
   </div>
- <!--
-  <div class="pl-snackbar"
-     aria-live="assertive"
-     aria-atomic="true"
-     aria-hidden="true">
-  <div class="pl-snackbar__text">{{ product.title }} added to bag</div>
-  <div class="pl-snackbar__action-wrapper">
-     <a href="/cart" class="pl-snackbar__action-button">Checkout</a>
-  </div>
-</div>
--->
 
 </div>
+<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
 
 <script>
       demoReady(function() {

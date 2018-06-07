@@ -5,43 +5,10 @@ function slickActive() {
         focusOnSelect: true,
         arrows: false,
         //centerMode: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: false,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: false,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: false,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ], 
+        touchThreshold: 7,
+        lazyLoad: 'progressive',
         infinite: true,
-        dots: true
+        dots: true,
     });
 }
 function slickZoom() {
