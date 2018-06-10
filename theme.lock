@@ -18,9 +18,9 @@ assets/bag-fill.svg:
 assets/bag.svg:
   development: 2018-05-19T10:09:28-05:00   403202d741b09a37516f7317e5503d33
 assets/bundle.css:
-  development: 2018-06-06T23:07:56-05:00   a1a7d318037595d23488751e71bc0a71
+  development: 2018-06-10T17:57:55-05:00   8ec7ab6951af1ec58387865296100ba3
 assets/bundle.css.map:
-  development: 2018-06-06T23:07:56-05:00   394fd07fce8862460f876ae5b956a2d4
+  development: 2018-06-10T17:57:55-05:00   04863f475b0791d36ed32a63c2d8216f
 assets/fastclick.min.js:
   development: 2018-05-22T12:56:43-05:00   be213fdfda9f3b8e0aa35a4aa562be9d
 assets/giftcard.js:
@@ -40,9 +40,9 @@ assets/icons.ttf:
 assets/icons.woff:
   development: 2018-05-22T13:55:44-05:00   6d64bee3b4d239a6cf6af98045a95954
 assets/imports.min.js:
-  development: 2018-06-05T09:52:46-05:00   839153fd3f8f668116d4fb9d507e8be2
+  development: 2018-06-07T12:32:56-05:00   839153fd3f8f668116d4fb9d507e8be2
 assets/imports.min.js.map:
-  development: 2018-06-05T09:52:46-05:00   cfab883e39f48d135084841c2476298c
+  development: 2018-06-07T12:32:56-05:00   0a391611097502f4f18084c9d200e43b
 assets/loading.gif:
   development: 2018-06-06T17:35:22-05:00   04a70963076e1335901c98e5c2492ab1
 assets/loading.svg:
@@ -74,17 +74,23 @@ assets/respond-proxy.html:
 assets/rivets-cart.min.js:
   development: 2018-05-24T11:46:43-05:00   3fbc557214bbbf2a10b48c4f0a0649f1
 assets/scripts.min.js:
-  development: 2018-06-06T19:50:47-05:00   00a0ea40ef837ceccb547b8a20a5a82a
+  development: 2018-06-10T15:38:58-05:00   68f7f13b720b3cc94562e70a53c28cc7
 assets/scripts.min.js.map:
-  development: 2018-06-06T19:50:47-05:00   c2dba6172fd29e861d08e728a6e0d389
+  development: 2018-06-10T15:38:58-05:00   fad554d6b28278b9331a15da6a82985a
 assets/shopping-bag.svg:
   development: 2018-05-19T09:44:13-05:00   4ef5d4cc4ff7e0e7d1ab61df6257b02e
+assets/slick-lightbox.css:
+  development: 2018-06-07T01:04:39-05:00   051dcb5104609b594d8b67eb636c44e4
+assets/slick-lightbox.min.js:
+  development: 2018-06-07T01:04:18-05:00   c3813771eb792a4be25ae41c7277e053
+assets/slick-lightbox.min.js.map:
+  development: 2018-06-07T01:04:18-05:00   e5c8ebae11d35481fd1aa2eba1758f3d
 assets/theme.js:
   development: 2018-06-05T23:42:11-05:00   21368bcbd76ade1874ae78715d232fe6
 assets/theme.scss.liquid:
   development: 2018-06-02T13:46:36-05:00   c4d64b1a47739ce81bde311785e55974
 assets/vendor.js:
-  development: 2018-05-31T09:57:29-05:00   275ce3de2341e3a63498ed54a3c5285c
+  development: 2018-06-07T01:08:10-05:00   f9bd243cad63853e577602b2a30ffb56
 assets/walletcomparison2.jpg:
   development: 2018-05-21T09:55:39-05:00   09b07ae16e43f4306255254df51c883d
 assets/walletcomparison2desktop.jpg:
@@ -98,13 +104,13 @@ assets/what-the-hex.png:
 config/settings_data.json:
   development: 2018-05-01T10:02:28-05:00   40e9d3a24a9f228749b7a10971cc01a8
 config/settings_schema.json:
-  development: 2018-05-22T12:08:45-05:00   d659a4ca122d26fd21ad6d8e44f42c9e
+  development: 2018-06-10T17:02:14-05:00   4d3e2ba33c46f25dc648e4aa7c3aa3bb
 layout/gift_card.liquid:
   development: 2018-05-01T10:02:24-05:00   b58166c5e68a3ac6fc885d27b6c84eb4
 layout/password.liquid:
   development: 2018-05-01T10:02:24-05:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  development: 2018-06-06T17:30:23-05:00   0841f10be9d6ac5cef5300fcbdf21c1a
+  development: 2018-06-10T16:51:14-05:00   73b3698161ba37d5942ec45530140fe1
 locales/da.json:
   development: 2018-05-01T10:04:25-05:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -130,15 +136,15 @@ sections/featured-collection.liquid:
 sections/featured-product.liquid:
   development: 2018-05-28T14:27:42-05:00   327ab295dc37c997b52f0634f0c403cd
 sections/footer.liquid:
-  development: 2018-05-23T07:35:47-05:00   2dbd15aeb924076084edc6ca84aa3c7b
+  development: 2018-06-10T13:31:46-05:00   90ac1dff4128b16a5ef93177fbb3f180
 sections/header.liquid:
   development: 2018-05-22T12:33:07-05:00   a91634348cc1f1dd859b5eb2419c80ef
 sections/nothome-collection-list.liquid:
   development: 2018-05-28T17:53:49-05:00   43d0a107849db3894e1898b6603c6328
 sections/product.liquid:
-  development: 2018-06-06T23:06:15-05:00   c4616bfd670f9b81e8ccd00237a7d005
+  development: 2018-06-10T18:23:13-05:00   118a0627d9b4f1a018012b5cfe0c07b1
 sections/slideshow.liquid:
-  development: 2018-06-05T11:50:48-05:00   6c3d2a6bdaa69347ce83728c10605fb8
+  development: 2018-06-10T18:07:43-05:00   775b82014cef89f1f1c938b234f4e348
 snippets/breadcrumbs.liquid:
   development: 2018-05-28T17:02:15-05:00   efeee44c25e73d2d00402db6c5c1d04f
 snippets/cart-slideout.liquid:
@@ -240,7 +246,7 @@ snippets/index.html:
 snippets/navigation-liq.liquid:
   development: 2018-05-15T12:01:06-05:00   42fb4e18ceea86d7af82c17526d05a24
 snippets/navigation.liquid:
-  development: 2018-05-30T22:34:01-05:00   d31c2c45196b9e877cd7f74613ceb869
+  development: 2018-06-10T17:57:42-05:00   249c7e99ec0f04cfa8523b2dd2e63df3
 snippets/newsletter.liquid:
   development: 2018-05-22T23:06:16-05:00   9f788da340e81f666c3c148fc5c1de03
 snippets/no-blocks.liquid:
@@ -288,7 +294,7 @@ templates/index.liquid:
 templates/list-collections.liquid:
   development: 2018-05-28T16:31:39-05:00   f91310633be84ecf088af4f7dffd772c
 templates/page.contact.liquid:
-  development: 2018-05-01T10:02:28-05:00   88dad9ec10b277c434ca6ea082a70052
+  development: 2018-06-10T16:41:52-05:00   6447ec6f1d12852d11aaa541cc1019d6
 templates/page.liquid:
   development: 2018-05-01T10:02:28-05:00   300278d299a5171fee928f45c938cd54
 templates/page.styles.liquid:

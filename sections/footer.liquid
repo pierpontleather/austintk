@@ -18,13 +18,13 @@
             <ul class "column">
               <li class="column-li">
               <div class="footer-lia-container-all footer-lia-{{ my_footer_variable }}-container" >
-                <a class="footer-lia_all footer-lia-{{ my_footer_variable }}" href="#">{{ link.title }}</a>
+                <a class="footer-lia_all footer-lia-{{ my_footer_variable }}">{{ link.title }}</a>
               </div>
               <div class= "footer-megamenu{{ my_altfooter_variable }} footer-megamenutop">					
                 <ul class= "footer-megalist{{ my_altfooter_variable }}">
                   {% for sub_link in link.links %}
                   <div class="menu2-footer">
-                    <li class="footer-title footer-sublistitem">{{ sub_link.title }}</li>
+                    <li class="footer-title footer-sublistitem"><a href="{{ sub_link.url }}">{{ sub_link.title }}</a></li>
                     {% if sub_link.links != blank %}
                     {% for sub_sub_link in sub_link.links %}
                     <li class={% cycle 'group6': '"footer-sublistitem lia1"', '"footer-sublistitem lia2"', '"footer-sublistitem lia3"', '"footer-sublistitem lia4"', '"footer-sublistitem lia5"' %}><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>                            

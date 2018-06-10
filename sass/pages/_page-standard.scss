@@ -1,0 +1,32 @@
+.template-page #MainContent {
+    max-width: 106.6rem;
+    margin: 2.4rem auto;
+    padding-left: 6.25%;
+    padding-right: 6.25%;
+}
+
+#contact_form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 2.4rem 0;
+}
+
+.text-field-contact {
+    margin-top: 1.6rem;
+}
+
+.mdc-text-field--box .mdc-floating-label--float-above {
+    transform: translateY(-85%) scale(0.75);
+}
+
+.contact-form-submit {
+    width: 80px;
+    align-self: flex-end;
+}
+
+.rte, .rte div, .rte strong, .rte a {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+}

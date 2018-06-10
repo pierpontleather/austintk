@@ -1,16 +1,15 @@
 
-function slickActive() {
-    $('.productimage__thumbnail--list').slick({
-        slidesToShow: 1,
-        focusOnSelect: true,
-        arrows: false,
-        //centerMode: true,
-        touchThreshold: 7,
-        lazyLoad: 'progressive',
-        infinite: true,
-        dots: true,
+function slickActive() {   
+    $('.productimage__thumbnail--list').slick({});
+    $('.productimage__thumbnail--list').slickLightbox({
+        src: 'src',
+        itemSelector: '.image-item > img',
+        background: 'rgba(255,255,255,.9)'
     });
+
 }
+
+
 function slickZoom() {
     $('.button-slider-next').on('click', function(e) {
         $('.productimage__thumbnail--list').slick('slickNext');
@@ -19,7 +18,7 @@ function slickZoom() {
         $('.productimage__thumbnail--list').slick('slickPrev');
     });
 
-    $('.productimage__thumbnail--list').on('click', function (event, slick, currentSlide, nextSlide) {
+/*    $('.productimage__thumbnail--list').on('click', function (event, slick, currentSlide, nextSlide) {
         var $selectedImageUrl = $('.slick-current div li a').attr('href');
         var $overlayImageMain = $('.productimage__container > img');
         var $overlay = $('.overlay');
@@ -57,7 +56,7 @@ function slickZoom() {
             $overlay.addClass("overlay-show");
             $('body').addClass("body__is-zoomed");
         }
-    });
+    }); */
 } 
 
 export { slickZoom, slickActive };

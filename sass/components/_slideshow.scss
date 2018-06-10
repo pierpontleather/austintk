@@ -5,17 +5,34 @@
     height: 50rem;
     width: 100%;
 }
+@include media-query ($small) {
+    .hero__slide {
+        height: 80vw;
+    }
+    div#slideshow-button {
+        font-size: 1.2rem;
+    }
+    .hero__text-content .mdc-typography--headline3 {
+        font-size: 6vw;
+        line-height: unset;
+    }
+}
 
 
 .hero__image {
     grid-area: 1 / 1 / 7 / 7;
     z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .hero__image-img {
-    height: 75vh;
-    width: 100%;
     object-fit: cover;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .hero__text-wrap {
@@ -67,3 +84,4 @@
 }
 
 */
+

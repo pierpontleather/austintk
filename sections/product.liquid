@@ -9,30 +9,52 @@
   <meta itemprop="brand" content="{{ product.vendor }}">
   <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+{% if product.images.size > 1 %} 
+  <div class="product-photos-wrapper">
+    <div class="product-photo-container">
+        <div class="productimage__carosel-container">
+          {% if product.images.size > 1 %} 
+            <div class="productimage__thumbnail--list" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "asNavFor": ".productimage__thumbnail--list",  "arrows": false, "touchThreshold": 7, "lazyLoad": "progressive", "infinite": true, "dots": true}'>
+              {% for image in product.images %}
+                  <div class="image-item">
+                    <img src="{{ image.src | img_url: '1024x' }}" {% comment %}src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" {% endcomment %} alt="{{ image.alt | escape }} thumbnail">
+                  </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>      
+    </div>
+    <div class="product-photo-container container-slick-nav">
+      <button class="button-slider-previous">{% include 'icon-previous' %}</button>
+        <div class="productimage__carosel-container">
+          {% if product.images.size > 1 %} 
+            <div class="productimage__thumbnail--list" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "asNavFor": ".productimage__thumbnail--list",  "arrows": false, "touchThreshold": 7, "lazyLoad": "progressive",  "focusOnSelect": true,  "infinite": true, "dots": true}'>
+              {% for image in product.images %}
+                  <div>
+                    <img  src="{{ image.src | img_url: '1024x' }}" {% comment %}src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" {% endcomment %} alt="{{ image.alt | escape }} thumbnail">
+                  </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      <button class="button-slider-next">{% include 'icon-next' %}</button>
+    </div>
+    {% if product.images.size == 1 %} 
+    <div>
+      <img  src="{{ product.images.first.src | img_url: '1024x' }}" alt="{{ image.alt | escape }} thumbnail">
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+ {% if product.images.size == 1 %} 
+ <div class="product-photos-wrapper">
+    <div>
+      <img  src="{{ product.images.first.src | img_url: '1024x' }}" alt="{{ image.alt | escape }} thumbnail">
+    </div>
+ </div>   
+    {% endif %}
 
-  
 
-  <div class="product-photo-container">
-    <button class="button-slider-previous">{% include 'icon-previous' %}</button>
-      <div class="productimage__carosel-container">
-        {% if product.images.size > 1 %} 
-          <ul class="productimage__thumbnail--list">
-            {% for image in product.images %}
-              <li>
-                <a href="{{ image.src | img_url: '2000x' }}" data-product-single-thumbnail></a>
-                <div>
-                <img  data-lazy="{{ image.src | img_url: '800x800' }}" {% comment %}src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" {% endcomment %} alt="{{ image.alt | escape }}">
-                </div>
-                
-                
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-    <button class="button-slider-next">{% include 'icon-next' %}</button>
-  </div>
-  
   <div class="product-desc">
   <div class="Item-Title">
     <h1 class="mdc-typography--headline4">{{ product.title }}</h1>
@@ -105,7 +127,7 @@
         name="add"
         data-add-to-cart
         class="product-add-to-cart foo-button mdc-button mdc-button--unelevated"
-        {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+        {% unless current_variant.available %}disabled="disabled"{% endunless %} data-mdc-auto-init="MDCRipple">
           <span data-add-to-cart-text class="add-to-cart-text">
             {% if current_variant.available %}
               {{ 'products.product.add_to_cart' | t }}

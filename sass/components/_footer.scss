@@ -188,7 +188,7 @@ width: 100%;
 .shopify-challenge__button.btn {
     padding: 1rem 2rem !important;
     color: #fff !important;
-    background: #fafafa !important;
+    background: #424242 !important;
     font-size: 1.5rem !important;
     letter-spacing: .1em !important;
     font-family: Cabin !important;
@@ -339,4 +339,11 @@ width: 100%;
 
 .footer-megalist>.menu2-footer:last-child {
     margin-top: 1.5rem;
+}
+
+.footer-sublistitem a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: 'Slabo 27px', serif;
+    letter-spacing: 0.9px;
 }

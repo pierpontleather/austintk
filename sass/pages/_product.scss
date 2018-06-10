@@ -6,6 +6,10 @@ div#shopify-section-product {
 }
 // ================  GLOBAL STYLES ( MEDIUM-UP ) ================//
 @include media-query(medium-up) {
+    .product-photo-container .slick-dots {
+        visibility: hidden;
+    }
+
     div[data-section-type="product"] {
         display: flex;
         justify-content: space-between;
@@ -99,7 +103,7 @@ div#shopify-section-product {
 }
 
 .slick-dots {
-    bottom: 10px;
+    bottom: -2.8rem;
     position: absolute;
     width: 100%;
     display: flex;
@@ -149,68 +153,16 @@ svg#search-reverse {
 }
 
 // === PRODUCT IMAGE ZOOM CSS === //
-
-// Class for body to prevent scrolling when zoomed 
-.body__is-zoomed {
-    min-height: 100vh;
-    overflow: hidden;
-    //position: fixed;
-    margin-right: 0px;
-
-    .overlay {
-        overflow: hidden;
-        overflow: scroll;
-    }
-}
-// Main Overlay Class
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1001;
-    background: rgba($white,.9);
-}
-// Activated on .overlay when product photo is clicked
-.overlay-show {
-    display: block;
-    overflow: hidden;
-    opacity: 1;
-    width: 100vw;
-    height: 100vh;
+.slick-lightbox .slick-arrow {
+    visibility: none;
+    visibility: hidden;
 }
 
-
-@media (min-width: 1024px) {
-    img.productimage__main-image {
-        max-width: 1024px;    
-    }
-    .productimage__container {
-        width: 1024px;
-        margin: calc( ( 100vh - 1024px ) / 2 ) auto;   
-    }
-}
-@media (max-width: 1023px) and (min-width: 750px) {
-    img.productimage__main-image {
-        max-width: 750px;    
-    }
-    .productimage__container {
-        width: 750px; 
-        margin: calc( ( 100vh - 750px ) / 2 ) auto;  
-    }
+.slick-lightbox-close:before {
+    font-size: 4rem;
+    color: #212121;
 }
 
-@media (max-width: 749px){
-    img.productimage__main-image {
-        max-width: 750px;   
-    }
-    .productimage__container {
-        width: 750px;  
-        margin: calc( ( 100vh - 750px ) / 2 ) auto;   
-    }
-}
 
 
 
@@ -280,6 +232,25 @@ div[data-price-wrapper] {
 // ================  "'SMALL' STYLES FOR PRODUCT PAGE" ( MOBILE ONLY ) ================//
 
 @include media-query($small) {
+
+    .slick-lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        background: black;
+        -webkit-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+        display: none;
+    }
+
+
+
+    .container-slick-nav {
+        display: none;
+    }
     p.shipping_returns_cta.slideout .icon-box-fast {
         fill: darken($colorSecondary, 10%);  ;
     }
@@ -298,25 +269,7 @@ div[data-price-wrapper] {
     padding: 0px 0px;
     }
     
-    .slick-slide img {
-        padding: 0 0;
-        width: 100vw;
-        height: 100vw;
-        
-        &:after {
-            content: "";
-            border: 5px solid rgba(0, 0, 0, 0.03);
-            border-top: 5px solid #757575;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: block;
-            position: relative;
-            top: calc(50% - 25px);
-            left: calc(50% - 25px);
-            animation: spin .9s cubic-bezier(0.64, 0.47, 0.33, 0.49) infinite;
-        }
-    }
+
     
     .product-desc {
     margin: -1px auto 0px;
@@ -520,4 +473,13 @@ div.spr-container {
 
 [class^="spr-icon-"]:before, [class*=" spr-icon-"]:before {
     color: #616160;
+}
+
+
+
+
+
+
+.mdc-snackbar__action-button {
+    color: #f4511e;
 }

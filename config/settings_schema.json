@@ -8,6 +8,21 @@
     "theme_support_url": "https:\/\/github.com\/Shopify\/slate"
   },
   {
+    "name": "Menu",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_nav",
+        "label": "Main navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_nav",
+        "label": "Footer navigation"
+      }
+    ]
+  },
+  {
     "name": "Typography",
     "settings": [
       {

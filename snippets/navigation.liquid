@@ -7,7 +7,7 @@
 			<li class="Logo">
 			<a href="/"><img src="{{ 'logo.svg' | asset_url }}" alt="logo"></a>
 			</li>
-			{% assign menu = linklists.main-menu-new %}
+			{% assign menu = linklists[settings.main_nav] %}
 			{% for link in menu.links %}
 			{% capture my_variable %}{% cycle 'group1': '1', '2', '3', '4' %}{% endcapture %}
 			{% capture my_altvariable %}{% cycle 'group2': '', '2', '3', '4' %}{% endcapture %}
@@ -29,7 +29,7 @@
 				</div>
 			</li>
 			{% elsif link.links == blank %}
-			<li class="list-item li{{ my_variable }}"><a href="#" onclick="showDrawer{{ my_altvariable }}()">{{ link.title }}</a>
+			<li class="list-item li{{ my_variable }}"><a href="#" onclick="showDrawer{{ my_altvariable }}()">{{ link.title }}</a></li>    
 			{% endif %}
 			{% endfor %}
             <div class="cart-navigation site-header__cart-toggle" aria-controls="CartDrawer" aria-expanded="false">
@@ -95,7 +95,7 @@
 			-->
 
 			<ul class="list mobile-nav-closed">
-			{% assign menu = linklists.main-menu-new %}
+			{% assign menu = linklists[settings.main_nav] %}
 			{% for link in menu.links %}
 			{% capture my_variable %}{% cycle 'group1': '1', '2', '3', '4' %}{% endcapture %}
 			{% capture my_altvariable %}{% cycle 'group2': '', '2', '3', '4' %}{% endcapture %}
@@ -109,6 +109,7 @@
 					<ul class= "megalist{{ my_altvariable }}">
 						{% for sub_link in link.links %}
 						<div class = menu2>
+							
 							<li class="title sublistitem">{{ sub_link.title }}</li>
 							{% if sub_link.links != blank %}
 							{% for sub_sub_link in sub_link.links %}

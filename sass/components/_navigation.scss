@@ -195,18 +195,31 @@ html #MainContent {
 }
 
 .megalist, .megalist2, .megalist3, .megalist4  {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(99px, 1fr));
-    padding: 0rem 4rem 2rem 4rem;
+    display: flex;
     text-align: center;
+    flex-direction: column;
 
 	.menu2 {
     width: 100%;
-    padding: .5rem;
+	padding: .5rem;
+	margin: 1.2rem 0;
 }
 
 .sublistitem {
-	font-size: 1.4rem;
+	font-size: 1.6rem;
+    margin: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #777;
+    border-bottom: 1px solid #eee;
+	padding-bottom: 1.6rem;
+}
+
+.sublistitem a {
+	font-size: 1.6rem;
+    text-transform: capitalize;
+    letter-spacing: .1em;
+	line-height: 2;	
 }
 }
 }

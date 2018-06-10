@@ -8,7 +8,7 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
   <link rel="canonical" href="{{ canonical_url }}">
 
- <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Slabo+27px" rel="stylesheet">
 
   {% if settings.favicon != blank %}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
@@ -36,7 +36,7 @@
   {{ 'material.min.js' | asset_url | script_tag }}
   {{ 'imports.min.js' | asset_url | script_tag }}
   {{ 'bundle.css' | asset_url | stylesheet_tag }}
-  
+  {{ 'slick-lightbox.css' | asset_url | stylesheet_tag }}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -83,13 +83,7 @@
       {% include 'topnav' %}
       {% section 'header' %}
       </div>
-      <div id="overlay" class="overlay"> 
-    
-       <div id="overlayimage" class="productimage__container">
-          <img class="productimage__main-image" src="{{ featured_image | img_url: '1080x1080' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
-        </div>
-     
-      </div> 
+   
       
       <div id="PageContainer" class="">
 
@@ -120,7 +114,7 @@
       $(function() {
         FastClick.attach(document.body);
     });
-
+    
   </script>
 {{ 'scripts.min.js' | asset_url | script_tag }}
 

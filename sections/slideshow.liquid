@@ -73,9 +73,9 @@
               </div>
             </div>
             {% unless block.settings.slide_cta == blank %}                 
-            <div href="{{ block.settings.slide_link }}" class="hero-button button">
+            <a id="slideshow-button" href="{{ block.settings.slide_link }}" class="hero-button foo-button mdc-button mdc-button--unelevated" data-mdc-auto-init="MDCRipple">
             {{ block.settings.slide_cta }}
-            </div>
+            </a>
             {% endunless %}
           </div>
 

@@ -3,52 +3,52 @@
 <div class="rte">
   {{ page.content }}
 </div>
-
 {% form 'contact' %}
+  
+  <div class="mdc-text-field mdc-text-field--box" data-mdc-auto-init="MDCTextField">
+    <input required type="text" name="contact[name]" id="ContactFormName" class="mdc-text-field__input" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+    <label class="mdc-floating-label" for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+    <div class="mdc-line-ripple" id=rippletext></div>
+  </div>
+ 
+  <div class="mdc-text-field mdc-text-field--box" data-mdc-auto-init="MDCTextField">
+    <input type="email" required
+      name="contact[email]"
+      id="ContactFormEmail"
+      value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+      spellcheck="false"
+      autocomplete="off"
+      autocapitalize="off"
+      class="mdc-text-field__input">
+    <label for="ContactFormEmail" id="contactformemaillabel" class="mdc-floating-label">{{ 'contact.form.email' | t }}</label>
+    <div class="mdc-line-ripple" id="rippleemail"></div>
+  </div>
 
-  {% if form.posted_successfully? %}
+  <div class="mdc-text-field mdc-text-field--box" data-mdc-auto-init="MDCTextField">
+    <input type="tel"
+      name="contact[phone]"
+      id="ContactFormPhone"
+      value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+      pattern="[0-9\-]*"
+      class="mdc-text-field__input">
+    <label for="ContactFormPhone" id="contactformphonelabel" class="mdc-floating-label">{{ 'contact.form.phone' | t }}</label>
+    <div class="mdc-line-ripple" id="ripplephone"></div>
+  </div>
+   
+  <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth text-field-contact" data-mdc-auto-init="MDCTextField">
+    <textarea required rows="8" cols="40" name="contact[body]" id="ContactFormMessage" class="mdc-text-field__input">{% if form.body %}{{ form.body }}{% endif %} </textarea>
+    <label for="ContactFormMessage" class="mdc-floating-label" id="contactformmessagelabel">{{ 'contact.form.message' | t }}</label>
+  </div>
+    
+
+  <input type="submit" class="foo-button mdc-button mdc-button--unelevated contact-form-submit" data-mdc-auto-init="MDCRipple" value="{{ 'contact.form.send' | t }}">
+
+{% if form.posted_successfully? %}
     <p class="form-success">
       {{ 'contact.form.post_success' | t }}
     </p>
   {% endif %}
-
   {{ form.errors | default_errors }}
 
-  <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
-  <input type="text"
-    name="contact[name]"
-    id="ContactFormName"
-    placeholder="{{ 'contact.form.name' | t }}"
-    value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
-
-  <label for="ContactFormEmail">{{ 'contact.form.email' | t }}</label>
-  <input type="email"
-    name="contact[email]"
-    id="ContactFormEmail"
-    placeholder="{{ 'contact.form.email' | t }}"
-    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-    spellcheck="false"
-    autocomplete="off"
-    autocapitalize="off">
-
-  <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
-  <input type="tel"
-    name="contact[phone]"
-    id="ContactFormPhone"
-    placeholder="{{ 'contact.form.phone' | t }}"
-    value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-    pattern="[0-9\-]*">
-
-  <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
-  <textarea rows="10"
-    name="contact[body]"
-    id="ContactFormMessage"
-    placeholder="{{ 'contact.form.message' | t }}">
-    {% if form.body %}
-      {{ form.body }}
-    {% endif %}
-  </textarea>
-
-  <input type="submit" class="btn" value="{{ 'contact.form.send' | t }}">
 
 {% endform %}
